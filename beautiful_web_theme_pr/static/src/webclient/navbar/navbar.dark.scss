@@ -1,0 +1,20 @@
+/*
+ * Navbar Dark Mode Overrides
+ *
+ * Adjusts the app icon button styling for dark mode.
+ * Included in `web.assets_web_dark` bundle.
+ */
+
+.o_navbar {
+    .o_navbar_apps_menu {
+        &:has(.o_beautiful_app_button) {
+            border-right-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .o_beautiful_app_button {
+            &:hover {
+                background: rgba(255, 255, 255, 0.06) !important;
+            }
+        }
+    }
+}

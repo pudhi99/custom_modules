@@ -1,0 +1,84 @@
+// Replicates Odoo Enterprise Dark Mode Primary Variables
+// These variables will override standard Odoo variables, recompiling the entire framework in Dark Mode!
+
+$o-white: #000;
+$o-black: #FFF;
+
+$o-gray-100: #1B1D26;
+$o-gray-200: #262A36;
+$o-gray-300: #3C3E4B;
+$o-gray-400: #5A5E6B;
+$o-gray-500: #6B707F;
+$o-gray-600: #7E8392;
+$o-gray-700: #B1B3BC;
+$o-gray-800: #D1D1D1;
+$o-gray-900: #E4E4E4;
+
+// Keep branding
+$o-community-color: #905289;
+$o-brand-primary: $o-community-color;
+$o-enterprise-action-color: #02c7b5;
+
+// Status colors
+$o-success: #1dc959;
+$o-info: #6AB5FB;
+$o-warning: #FBB56A;
+$o-danger: #ff5757;
+$o-action: $o-enterprise-action-color;
+
+// Button Colors
+$o-btn-primary-bg: #6b3e66;
+$o-btn-primary-hover-bg: #7b4775;
+$o-btn-primary-active-bg: #8b5185;
+$o-btn-primary-focus-shadow-rgb: 129, 91, 125;
+
+// Text colors
+$o-main-text-color: $o-gray-800;
+$o-main-link-color: $o-action;
+$o-main-favorite-color: #ffd532;
+$o-main-code-color: #c58bc8;
+
+// Backgrounds
+$o-webclient-color-scheme: dark;
+$o-webclient-background-color: $o-gray-100;
+$o-view-background-color: $o-gray-200;
+$o-navbar-background: #1c0c1d;
+$o-navbar-border-bottom: none;
+$o-navbar-entry-color: $o-gray-800;
+$o-navbar-entry-bg--hover: rgba(255, 255, 255, 0.1);
+$o-navbar-entry-color--hover: #FFF;
+
+// Inputs & Components
+$o-input-border-required: $o-black;
+$o-component-active-bg: mix($o-action, $o-gray-300, 10%);
+$o-form-lightsecondary: $o-gray-300;
+
+// Dropdowns & Popovers
+$dropdown-bg: $o-gray-300;
+$dropdown-border-color: $o-gray-400;
+$dropdown-header-color: $o-gray-700;
+$popover-bg: $o-gray-300;
+$popover-border-color: $o-gray-400;
+
+// Cards & Lists
+$card-cap-bg: $o-view-background-color;
+$list-group-bg: transparent;
+$list-group-border-color: rgba(255, 255, 255, 0.1);
+$list-group-action-hover-bg: rgba(255, 255, 255, 0.05);
+$list-group-action-active-bg: rgba(255, 255, 255, 0.15);
+$list-group-action-active-color: #FFF;
+$list-group-active-bg: rgba(255, 255, 255, 0.15);
+$list-group-active-color: #FFF;
+$list-group-active-border-color: transparent;
+
+// Tables
+$table-bg: $o-view-background-color;
+$table-border-color: $o-gray-300;
+$table-group-separator-color: $o-gray-300;
+
+// Tooltips
+$tooltip-color: $o-gray-800;
+$tooltip-bg: $o-gray-300;
+
+// Modals
+$modal-backdrop-bg: $o-white;
