@@ -26,7 +26,9 @@
     """,
     'author': 'Beautiful Themes PR',
     'website': 'https://www.beautiful-odoo-themes.com',
-    'license': 'LGPL-3',
+    'license': 'OPL-1',
+    'price': 5.00,
+    'currency': 'USD',
     'images': [
         'static/description/screenshot_home.png',
         'static/description/screenshot_search.png',
@@ -85,5 +87,5 @@
     'installable': True,
     'application': False,  # This is a theme, not a standalone app
     'auto_install': False,
-    'license': 'LGPL-3',
+
 }
