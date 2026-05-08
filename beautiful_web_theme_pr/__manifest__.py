@@ -30,10 +30,13 @@
     'price': 5.00,
     'currency': 'USD',
     'images': [
-        'static/description/screenshot_home.png',
-        'static/description/screenshot_search.png',
-        'static/description/screenshot_dark.png',
         'static/description/banner.png',
+        'static/description/feature_overview.png',
+        'static/description/screenshot_home.png',
+        'static/description/feature_search.png',
+        'static/description/screenshot_search.png',
+        'static/description/feature_palettes.png',
+        'static/description/screenshot_home1.png',
     ],
     'depends': ['web'],
     'data': [
