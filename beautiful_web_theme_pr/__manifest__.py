@@ -30,6 +30,7 @@
     'license': 'OPL-1',
     'price': 5.00,
     'currency': 'USD',
+    'video': 'https://www.youtube.com/watch?v=J4tltGK5RaI',
     'images': [
         'static/description/banner.gif',
         'static/description/feature_overview.png',
