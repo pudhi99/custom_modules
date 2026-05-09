@@ -30,7 +30,7 @@
     'price': 5.00,
     'currency': 'USD',
     'images': [
-        'static/description/banner.png',
+        'static/description/banner.gif',
         'static/description/feature_overview.png',
         'static/description/screenshot_home.png',
         'static/description/feature_search.png',
