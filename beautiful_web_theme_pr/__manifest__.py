@@ -47,7 +47,6 @@
         'web.assets_backend': [
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.scss',
             'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.scss',
-            'beautiful_web_theme_pr/static/src/scss/dark_mode_global_fixes.scss',
             'beautiful_web_theme_pr/static/src/**/*.js',
             'beautiful_web_theme_pr/static/src/**/*.xml',
         ],
@@ -57,6 +56,7 @@
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.default_dark.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
+            'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
         # Midnight Dark Mode
         'web.assets_web_dark_midnight': [
@@ -64,6 +64,7 @@
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.midnight.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
+            'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
         # Emerald Forest Dark Mode
         'web.assets_web_dark_emerald': [
@@ -71,6 +72,7 @@
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.emerald.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
+            'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
         # Royal Red Dark Mode
         'web.assets_web_dark_crimson': [
@@ -78,6 +80,7 @@
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.crimson.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
+            'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
         # Oceanic Blue Dark Mode
         'web.assets_web_dark_oceanic': [
@@ -85,6 +88,10 @@
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.oceanic.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
+            'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
+        ],
+        'mail.assets_message_email': [
+            'beautiful_web_theme_pr/static/src/scss/mail_message_shadow.scss',
         ],
     },
     'installable': True,

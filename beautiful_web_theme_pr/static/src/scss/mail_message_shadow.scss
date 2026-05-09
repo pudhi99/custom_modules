@@ -1,0 +1,27 @@
+/**
+ * Mail Message Shadow DOM Overrides
+ * This file is loaded into the Shadow DOM of messages (emails).
+ * It ensures that text color is inherited from the backend theme, 
+ * resolving the "white text on white background" issue in Light mode.
+ */
+
+:host, :host *, * {
+    // Force inheritance from the themed parent container
+    // This overrides the rogue 'color: white !important' injected by Odoo JS
+    color: inherit !important;
+    background-color: transparent !important;
+}
+
+// Preserve Odoo's link colors
+a, a * {
+    color: #66598f !important;
+}
+
+a:hover, a *:hover {
+    color: #564b79 !important;
+}
+
+// Preserve search highlights
+.o-mail-Message-searchHighlight {
+    background: #e99d00bf !important;
+}
