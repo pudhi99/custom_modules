@@ -25,6 +25,7 @@
         UI theme, color theme, custom theme, modern theme
     """,
     'author': 'Beautiful Themes PR',
+    'support': 'prudhvi.inumarthi99bkp@gmail.com',
     'website': 'https://www.beautiful-odoo-themes.com',
     'license': 'OPL-1',
     'price': 5.00,
