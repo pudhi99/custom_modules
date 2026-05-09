@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Dark Theme Pro — Enterprise Home Menu & Fuzzy Search',
+    'name': 'Dark Theme Pro - Community - Enterprise Home Menu & Fuzzy Search',
     'version': '19.0.1.0.0',
     'category': 'Themes/Backend',
     'summary': 'Enterprise-style dark theme with fuzzy search, glassmorphism UI & 5 color palettes for Odoo 19 Community',
