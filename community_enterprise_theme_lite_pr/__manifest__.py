@@ -52,7 +52,7 @@
     'currency': 'USD',
     'images': [
         'static/description/banner.png',
-        'static/description/main_screenshot.png.png',
+        'static/description/theme_screenshot.png',
         'static/description/screenshot_home.png',
     ],
     'depends': ['web'],

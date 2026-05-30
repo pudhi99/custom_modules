@@ -63,7 +63,7 @@
     'currency': 'USD',
     'images': [
         'static/description/banner.png',
-        # 'static/description/main_screenshot.png',
+        'static/description/theme_screenshot.png',
         'static/description/screenshot_home.png',
         'static/description/screenshot_search.png',
         'static/description/screenshot_home1.png',
