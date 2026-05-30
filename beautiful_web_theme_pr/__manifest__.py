@@ -1,28 +1,43 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Dark Theme Pro - Community - Enterprise Home Menu & Fuzzy Search',
-    'version': '19.0.1.0.0',
+    'name': 'Odoo 19 Enterprise Look — Dark Theme, Home Menu & Fuzzy Search',
+    'version': '19.0.1.1.0',
     'category': 'Themes/Backend',
-    'summary': 'Enterprise-style dark theme with fuzzy search, glassmorphism UI & 5 color palettes for Odoo 19 Community',
+    'summary': 'Get Enterprise home menu, fuzzy search & 5 dark color palettes in Odoo 19 Community — no Enterprise license needed',
     'description': """
-        Dark Theme for Odoo 19 Community — Enterprise-Style UI
-        ========================================================
-        Beautiful Web Theme Pro brings Enterprise-quality features to Odoo Community:
+        Odoo 19 Enterprise Look for Community Edition
+        =============================================
+        Transform your Odoo 19 Community into a premium Enterprise-grade experience.
+        No Enterprise license required. Install and go.
 
         KEY FEATURES
         ------------
-        - Enterprise-style fuzzy search: type anywhere on the home screen to instantly search apps
-        - Full-screen app grid home menu (like Odoo Enterprise)
-        - Glassmorphism navbar with backdrop blur effect
-        - 5 dark color themes: Amethyst, Midnight Blue, Emerald Forest, Royal Red, Oceanic Blue
-        - Light mode support
-        - Accessibility fixes for search panels, company switcher, spreadsheet dashboards
+        * Enterprise-Style Home Menu: Full-screen app grid at /odoo — just like Odoo Enterprise
+        * Fuzzy Search: Type anywhere on the home screen to instantly find any app or menu item
+        * 5 Dark Color Palettes: Amethyst (default), Midnight Blue, Emerald Forest, Royal Red, Oceanic Blue
+        * Glassmorphism Navbar: Frosted-glass backdrop blur effect on the top navigation bar
+        * Light Mode Support: Clean, modern light theme with the same Enterprise-style layout
+        * Per-User Preferences: Each user picks their own color scheme from Preferences settings
+        * Accessibility Fixes: Correct contrast and colors in search panels, company switcher, spreadsheets
+        * Zero Performance Cost: Pure CSS animations using GPU-accelerated transform and opacity
+
+        WHAT YOU GET THAT COMMUNITY LACKS
+        -----------------------------------
+        Community Edition missing feature   →   This module adds it
+        -------------------------------------------------------------------
+        /odoo home dashboard page           →   Full-screen app icon grid
+        Enterprise fuzzy app search         →   Command Palette integration
+        Dark mode / color themes            →   5 palettes + light mode
+        Modern glassmorphism navbar         →   Backdrop-blur frosted glass
 
         KEYWORDS
         --------
-        dark mode, dark theme, enterprise theme, glassmorphism, fuzzy search, home menu,
-        community enterprise features, backend theme, Odoo 19 theme, beautiful theme,
-        UI theme, color theme, custom theme, modern theme
+        odoo 19 dark mode, odoo 19 enterprise look, odoo community enterprise features,
+        enterprise home menu odoo, odoo dark theme, odoo 19 theme, beautiful theme odoo,
+        odoo ui theme, odoo backend theme, odoo color theme, odoo professional theme,
+        fuzzy search odoo, home menu odoo community, glassmorphism odoo,
+        dark mode odoo 19, odoo community dark, odoo enterprise style community,
+        odoo 19 color palette, modern odoo theme, odoo night mode
     """,
     'author': 'Beautiful Themes PR',
     'support': 'prudhvi.inumarthi99bkp@gmail.com',
@@ -57,6 +72,7 @@
             ('include', 'web.assets_web'),
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.default_dark.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
+            'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
             'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
@@ -65,6 +81,7 @@
             ('include', 'web.assets_web_dark'),
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.midnight.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
+            'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
             'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
@@ -73,6 +90,7 @@
             ('include', 'web.assets_web_dark'),
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.emerald.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
+            'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
             'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
@@ -81,6 +99,7 @@
             ('include', 'web.assets_web_dark'),
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.crimson.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
+            'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
             'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],
@@ -89,6 +108,7 @@
             ('include', 'web.assets_web_dark'),
             ('before', 'web/static/src/scss/primary_variables.scss', 'beautiful_web_theme_pr/static/src/scss/primary_variables.oceanic.scss'),
             'beautiful_web_theme_pr/static/src/home_menu/home_menu.dark.scss',
+            'beautiful_web_theme_pr/static/src/webclient/navbar/navbar.dark.scss',
             'beautiful_web_theme_pr/static/src/scss/notebook_overrides.scss',
             'beautiful_web_theme_pr/static/src/scss/search_panel_dark.scss',
         ],

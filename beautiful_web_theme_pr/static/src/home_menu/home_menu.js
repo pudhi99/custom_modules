@@ -73,9 +73,9 @@ export class HomeMenu extends Component {
         const darkBackgrounds = {
             'dark': 'default.jpg',
             'dark_default': 'default.jpg',
-            'dark_midnight': 'deep blue.jpg',
-            'dark_emerald': 'ocean blue.jpg',
-            'dark_oceanic': 'ocean blue.jpg',
+            'dark_midnight': 'deep-blue.jpg',
+            'dark_emerald': 'ocean-blue.jpg',
+            'dark_oceanic': 'ocean-blue.jpg',
             'dark_crimson': 'red.jpg',
         };
 
