@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="webclient_bootstrap_inherit" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-if=&quot;color_scheme == 'dark'&quot;]" position="replace">
+            <t t-if="color_scheme == 'dark'">
+                <t t-call-assets="web.assets_web_dark" media="screen" t-js="false"/>
+            </t>
+            <t t-elif="color_scheme == 'dark_midnight'">
+                <t t-call-assets="web.assets_web_dark_midnight" media="screen" t-js="false"/>
+            </t>
+            <t t-elif="color_scheme == 'dark_emerald'">
+                <t t-call-assets="web.assets_web_dark_emerald" media="screen" t-js="false"/>
+            </t>
+            <t t-elif="color_scheme == 'dark_crimson'">
+                <t t-call-assets="web.assets_web_dark_crimson" media="screen" t-js="false"/>
+            </t>
+            <t t-elif="color_scheme == 'dark_oceanic'">
+                <t t-call-assets="web.assets_web_dark_oceanic" media="screen" t-js="false"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

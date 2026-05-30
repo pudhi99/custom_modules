@@ -1,0 +1,42 @@
+/* 
+ * Emerald Forest Theme Variables 
+ * Based on deep forest greens for a calm, organic dark mode.
+ */
+
+$o-white: #000;
+$o-black: #FFF;
+
+// Gray scales with green tint
+$o-gray-100: #0a1a15;
+$o-gray-200: #12261f;
+$o-gray-300: #1b362c;
+$o-gray-400: #2d4d3f;
+$o-gray-500: #4a6b5c;
+$o-gray-600: #718f81;
+$o-gray-700: #a7f3d0;
+$o-gray-800: #d1fae5;
+$o-gray-900: #ecfdf5;
+
+// Backgrounds
+$o-webclient-color-scheme: dark;
+$o-webclient-background-color: $o-gray-100;
+$o-view-background-color: $o-gray-200;
+$o-navbar-background: $o-gray-100;
+$o-navbar-border-bottom: none;
+$o-navbar-entry-color: $o-gray-800;
+$o-navbar-entry-bg--hover: rgba(255, 255, 255, 0.1);
+$o-navbar-entry-color--hover: #FFF;
+
+// Brand & Action Colors
+$o-brand-primary: #064e3b;
+$o-brand-secondary: #065f46;
+$o-action: #10b981; // Emerald Green
+
+// Button Colors
+$o-btn-primary-bg: #10b981;
+$o-btn-primary-hover-bg: #34d399;
+$o-btn-primary-active-bg: #059669;
+$o-btn-primary-focus-shadow-rgb: 16, 185, 129;
+
+// Text Colors
+$o-main-text-color: $o-gray-800;

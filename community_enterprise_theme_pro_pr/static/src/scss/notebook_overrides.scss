@@ -1,0 +1,94 @@
+/* 
+ * Notebook (Tabs) Overrides
+ * Ensures tabs have correct theme colors and active states.
+ */
+
+.o_notebook,
+.o_notebook_headers {
+    .nav-tabs {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+        .nav-link {
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid transparent !important;
+            border-bottom: none !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            transition: all 0.2s ease !important;
+            margin-right: 2px !important;
+            border-radius: 4px 4px 0 0 !important;
+
+            &:hover {
+                color: #FFF !important;
+                background: rgba(255, 255, 255, 0.05) !important;
+            }
+
+            &.active {
+                background: transparent !important;
+                color: $o-brand-primary !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                border-top: 3px solid $o-brand-primary !important;
+                border-bottom: 1px solid $o-view-background-color !important;
+                margin-bottom: -1px !important;
+                font-weight: 500 !important;
+            }
+        }
+    }
+}
+
+// 2. Form Status Indicator Buttons (Save/Discard)
+.o_form_status_indicator_buttons {
+    .btn-light {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF !important;
+        border: none !important;
+        box-shadow: none !important;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #FFF !important;
+        }
+        
+        &:active {
+            background: $o-brand-primary !important;
+        }
+
+        i {
+            color: inherit !important;
+        }
+    }
+}
+
+// 3. Global Light Buttons in Dark Mode
+.btn-light {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    border: none;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #FFF;
+    }
+}
+
+// 4. Primary Button Overrides (Theme-aware)
+$o-btn-primary-bg: $o-brand-primary !default;
+$o-btn-primary-hover-bg: mix($o-brand-primary, #FFF, 90%) !default;
+$o-btn-primary-active-bg: mix($o-brand-primary, #FFF, 80%) !default;
+$o-btn-primary-focus-shadow-rgb: 113, 99, 158 !default;
+
+.btn-primary {
+    --btn-color: #FFF !important;
+    --btn-bg: #{$o-btn-primary-bg} !important;
+    --btn-border-color: #{$o-btn-primary-bg} !important;
+    --btn-hover-color: #FFF !important;
+    --btn-hover-bg: #{$o-btn-primary-hover-bg} !important;
+    --btn-hover-border-color: #{$o-btn-primary-hover-bg} !important;
+    --btn-focus-shadow-rgb: #{$o-btn-primary-focus-shadow-rgb} !important;
+    --btn-active-color: #FFF !important;
+    --btn-active-bg: #{$o-btn-primary-active-bg} !important;
+    --btn-active-border-color: #{$o-btn-primary-active-bg} !important;
+    --btn-active-shadow: 0 !important;
+    --btn-disabled-color: #FFF !important;
+    --btn-disabled-bg: #{$o-btn-primary-bg} !important;
+    --btn-disabled-border-color: #{$o-btn-primary-bg} !important;
+}

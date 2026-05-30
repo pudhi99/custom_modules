@@ -1,0 +1,114 @@
+/*
+ * Global Dark Mode UI Fixes
+ * These styles are loaded in web.assets_backend and activate only when dark mode is enabled.
+ */
+
+[data-bs-theme="dark"] {
+    // 1. Navbar Glassmorphism
+    .o_navbar {
+        background: var(--o-navbar-background, rgba(255, 255, 255, 0.7)) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border-bottom: none !important;
+    }
+
+    // 2. Search Panel & Spreadsheet Dashboard Fixes
+    .o_search_panel, 
+    .o_spreadsheet_dashboard_search_panel,
+    .o_searchview {
+        background-color: transparent !important;
+        
+        &.bg-view {
+            background-color: transparent !important;
+        }
+
+        .o_search_panel_section_header {
+            color: rgba(255, 255, 255, 0.9) !important;
+            background-color: transparent !important;
+            
+            b {
+                color: #FFF !important;
+            }
+        }
+
+        // List items (Normal and Dashboard)
+        .list-group-item, .o_search_panel_category_value {
+            background-color: transparent !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            border: none !important;
+
+            &.active, 
+            &.active:hover,
+            &.active:focus {
+                background-color: rgba(255, 255, 255, 0.15) !important;
+                color: #FFF !important;
+                font-weight: bold !important;
+
+                // Force white text on all children
+                *, .o_search_panel_label_title, .o_dashboard_name, .fw-bold {
+                    color: #FFF !important;
+                }
+            }
+
+            &:hover:not(.active) {
+                background-color: rgba(255, 255, 255, 0.05) !important;
+                color: #FFF !important;
+            }
+        }
+        
+        // Deeply specific override for spreadsheet dashboard
+        &.o_spreadsheet_dashboard_search_panel .list-group-item.active {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            color: #FFF !important;
+            
+            .o_dashboard_name {
+                color: #FFF !important;
+            }
+        }
+    }
+
+    // 2.1 Spreadsheet Dashboard Action Fix (Hardcoded White backgrounds)
+    .o_spreadsheet_dashboard_action {
+        background-color: transparent !important;
+        
+        .o_renderer, .o-spreadsheet, .o-grid {
+            background-color: #111111 !important; // Matches our dark gray
+            color: #D1D1D1 !important;
+        }
+
+        .o_spreadsheet_dashboard_search_panel {
+            background-color: transparent !important;
+        }
+    }
+
+    // 4. Company Switcher Fixes
+    .o_switch_company_menu_dropdown {
+        .o_switch_company_item {
+            background-color: transparent !important;
+            
+            // Active/Focus/Hover states
+            &.alert-secondary, &.focus, &:hover, &.active, &[aria-selected="true"] {
+                background-color: rgba(255, 255, 255, 0.15) !important;
+                color: #FFF !important;
+                
+                // Force hide any bright backgrounds on inner divs
+                div, .bg-primary-subtle, .text-body, .company_label, span, i {
+                    background-color: transparent !important;
+                    color: #FFF !important;
+                }
+            }
+
+            .bg-primary-subtle {
+                background-color: transparent !important;
+            }
+        }
+    }
+
+    // 3. Database Indicator (Mark) Fix
+    mark.text-truncate {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+}
+

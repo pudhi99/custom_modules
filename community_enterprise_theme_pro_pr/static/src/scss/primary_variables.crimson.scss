@@ -1,0 +1,42 @@
+/* 
+ * Royal Red Theme Variables 
+ * A bold, high-contrast dark mode with deep crimson and maroon accents.
+ */
+
+$o-white: #000;
+$o-black: #FFF;
+
+// Gray scales with red tint
+$o-gray-100: #1a0a0a;
+$o-gray-200: #261212;
+$o-gray-300: #361b1b;
+$o-gray-400: #4d2d2d;
+$o-gray-500: #6b4a4a;
+$o-gray-600: #8f7171;
+$o-gray-700: #fecaca;
+$o-gray-800: #fee2e2;
+$o-gray-900: #fef2f2;
+
+// Backgrounds
+$o-webclient-color-scheme: dark;
+$o-webclient-background-color: $o-gray-100;
+$o-view-background-color: $o-gray-200;
+$o-navbar-background: $o-gray-100;
+$o-navbar-border-bottom: none;
+$o-navbar-entry-color: $o-gray-800;
+$o-navbar-entry-bg--hover: rgba(255, 255, 255, 0.1);
+$o-navbar-entry-color--hover: #FFF;
+
+// Brand & Action Colors
+$o-brand-primary: #7f1d1d;
+$o-brand-secondary: #991b1b;
+$o-action: #ef4444; // Crimson Red
+
+// Button Colors
+$o-btn-primary-bg: #ef4444;
+$o-btn-primary-hover-bg: #f87171;
+$o-btn-primary-active-bg: #dc2626;
+$o-btn-primary-focus-shadow-rgb: 239, 68, 68;
+
+// Text Colors
+$o-main-text-color: $o-gray-800;

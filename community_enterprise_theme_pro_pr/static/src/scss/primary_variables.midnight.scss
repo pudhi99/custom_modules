@@ -1,0 +1,45 @@
+// Midnight Blue Dark Mode Primary Variables
+
+$o-white: #000;
+$o-black: #FFF;
+
+$o-gray-100: #0a0e1a; // Very dark navy
+$o-gray-200: #111827; // Slate 900
+$o-gray-300: #1f2937; // Slate 800
+$o-gray-400: #374151; // Slate 700
+$o-gray-500: #4b5563; // Slate 600
+$o-gray-600: #6b7280; // Slate 500
+$o-gray-700: #9ca3af; // Slate 400
+$o-gray-800: #d1d5db; // Slate 300
+$o-gray-900: #f3f4f6; // Slate 100
+
+// Backgrounds
+$o-webclient-color-scheme: dark;
+$o-webclient-background-color: $o-gray-100;
+$o-view-background-color: $o-gray-200;
+$o-navbar-background: $o-gray-100;
+$o-navbar-border-bottom: none;
+$o-navbar-entry-color: $o-gray-800;
+$o-navbar-entry-bg--hover: rgba(255, 255, 255, 0.1);
+$o-navbar-entry-color--hover: #FFF;
+
+// Keep branding
+$o-community-color: #3b82f6; // Vibrant Blue
+$o-brand-primary: $o-community-color;
+$o-enterprise-action-color: #60a5fa; // Lighter Blue
+
+// Status colors
+$o-success: #10b981; // Emerald 500
+$o-info: #3b82f6;
+$o-warning: #f59e0b; // Amber 500
+$o-danger: #ef4444; // Red 500
+$o-action: $o-enterprise-action-color;
+
+// Button Colors
+$o-btn-primary-bg: #3b82f6;
+$o-btn-primary-hover-bg: #60a5fa;
+$o-btn-primary-active-bg: #2563eb;
+$o-btn-primary-focus-shadow-rgb: 59, 130, 246;
+
+// Text colors
+$o-main-text-color: $o-gray-800;
