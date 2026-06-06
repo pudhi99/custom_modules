@@ -42,6 +42,8 @@
     'installable': True,
     'auto_install': False,
     'application': True,
+    'icon': 'static/description/icon.png',
+    # images key is for odoo.com online app store only — not used locally
     'images': [
         'static/description/banner.png',
         'static/description/feature_overview.png',
