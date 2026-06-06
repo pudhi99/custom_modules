@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_expiry_config_form" model="ir.ui.view">
+        <field name="name">stock.expiry.config.form</field>
+        <field name="model">stock.expiry.config</field>
+        <field name="arch" type="xml">
+            <form string="Expiry Alert Settings">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Expiry Alert Configuration</h1>
+                    </div>
+                    <group>
+                        <group string="Company">
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Thresholds">
+                            <group>
+                                <group string="Traffic-Light Thresholds (days)">
+                                    <field name="threshold_green"/>
+                                    <field name="threshold_yellow"/>
+                                    <field name="threshold_red"/>
+                                </group>
+                                <group string="Alert Trigger Days">
+                                    <field name="alert_days_1"/>
+                                    <field name="alert_days_2"/>
+                                    <field name="alert_days_3"/>
+                                    <field name="alert_days_4"/>
+                                    <field name="alert_days_5"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Auto Transfer">
+                            <group>
+                                <field name="auto_transfer_enabled"/>
+                                <field name="clearance_location_id"
+                                       required="auto_transfer_enabled"/>
+                            </group>
+                        </page>
+                        <page string="Recipients">
+                            <group>
+                                <field name="alert_recipient_ids" widget="many2many_tags"/>
+                                <field name="digest_recipient_ids" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                        <page string="Filters">
+                            <group>
+                                <field name="monitor_category_ids" widget="many2many_tags"/>
+                                <field name="monitor_location_ids" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_expiry_config_list" model="ir.ui.view">
+        <field name="name">stock.expiry.config.list</field>
+        <field name="model">stock.expiry.config</field>
+        <field name="arch" type="xml">
+            <list string="Expiry Configurations">
+                <field name="company_id"/>
+                <field name="threshold_green"/>
+                <field name="threshold_yellow"/>
+                <field name="threshold_red"/>
+                <field name="auto_transfer_enabled"/>
+                <field name="clearance_location_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_expiry_config_open" model="ir.actions.server">
+        <field name="name">Expiry Alert Settings</field>
+        <field name="model_id" ref="model_stock_expiry_config"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_expiry_config()</field>
+    </record>
+</odoo>

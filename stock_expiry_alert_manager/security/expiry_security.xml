@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Record rules: company isolation -->
+    <record id="expiry_config_rule_company" model="ir.rule">
+        <field name="name">Expiry Config: company isolation</field>
+        <field name="model_id" ref="model_stock_expiry_config"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="expiry_history_rule_company" model="ir.rule">
+        <field name="name">Expiry History: company isolation</field>
+        <field name="model_id" ref="model_stock_expiry_history"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="expiry_cost_report_rule_company" model="ir.rule">
+        <field name="name">Expiry Cost Report: company isolation</field>
+        <field name="model_id" ref="model_stock_expiry_cost_report"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

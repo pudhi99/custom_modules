@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_expiry_send_alert_form" model="ir.ui.view">
+        <field name="name">stock.expiry.send.alert.form</field>
+        <field name="model">stock.expiry.send.alert</field>
+        <field name="arch" type="xml">
+            <form string="Send Expiry Alert Now">
+                <sheet>
+                    <group>
+                        <group string="Lots">
+                            <field name="lot_ids" widget="many2many_tags"/>
+                        </group>
+                        <group string="Delivery">
+                            <field name="alert_type"/>
+                            <field name="recipient_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group string="Custom Message (optional)">
+                        <field name="custom_message" nolabel="1" placeholder="Add a note to include in the alert email..."/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_send" type="object"
+                            string="Send Alert" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

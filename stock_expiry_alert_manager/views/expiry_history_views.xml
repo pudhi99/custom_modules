@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_expiry_history_list" model="ir.ui.view">
+        <field name="name">stock.expiry.history.list</field>
+        <field name="model">stock.expiry.history</field>
+        <field name="arch" type="xml">
+            <list string="Alert History" create="false" edit="false" delete="false"
+                  decoration-danger="expiry_status in ('red', 'expired')"
+                  decoration-warning="expiry_status == 'yellow'">
+                <field name="alert_date"/>
+                <field name="lot_id"/>
+                <field name="product_id"/>
+                <field name="expiry_status" widget="badge"
+                       decoration-danger="expiry_status in ('red', 'expired')"
+                       decoration-warning="expiry_status == 'yellow'"
+                       decoration-success="expiry_status == 'green'"/>
+                <field name="days_to_expiry"/>
+                <field name="expiration_date"/>
+                <field name="alert_type"/>
+                <field name="alert_level"/>
+                <field name="transfer_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_expiry_history_form" model="ir.ui.view">
+        <field name="name">stock.expiry.history.form</field>
+        <field name="model">stock.expiry.history</field>
+        <field name="arch" type="xml">
+            <form string="Alert History Record" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lot_id"/>
+                            <field name="product_id"/>
+                            <field name="alert_date"/>
+                            <field name="alert_type"/>
+                            <field name="alert_level"/>
+                        </group>
+                        <group>
+                            <field name="expiry_status"/>
+                            <field name="days_to_expiry"/>
+                            <field name="expiration_date"/>
+                            <field name="transfer_id"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                    <group string="Recipients">
+                        <field name="recipient_ids" widget="many2many_tags" readonly="1"/>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_expiry_history_search" model="ir.ui.view">
+        <field name="name">stock.expiry.history.search</field>
+        <field name="model">stock.expiry.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="lot_id"/>
+                <field name="product_id"/>
+                <filter string="Email Alerts" name="filter_email"
+                        domain="[('alert_type', '=', 'email')]"/>
+                <filter string="Auto Transfers" name="filter_transfer"
+                        domain="[('alert_type', '=', 'auto_transfer')]"/>
+                <filter string="Digests" name="filter_digest"
+                        domain="[('alert_type', '=', 'digest')]"/>
+                <group>
+                    <filter string="Alert Type" name="group_type" domain="[]"
+                            context="{'group_by': 'alert_type'}"/>
+                    <filter string="Status" name="group_status" domain="[]"
+                            context="{'group_by': 'expiry_status'}"/>
+                    <filter string="Date" name="group_date" domain="[]"
+                            context="{'group_by': 'alert_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_expiry_history" model="ir.actions.act_window">
+        <field name="name">Alert History</field>
+        <field name="res_model">stock.expiry.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_expiry_history_search"/>
+    </record>
+</odoo>

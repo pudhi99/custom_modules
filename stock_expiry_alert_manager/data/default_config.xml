@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Default singleton config — created automatically by get_config() on first use.
+         This record seeds the first company's config at install time. -->
+    <function model="stock.expiry.config" name="get_config"/>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit stock.picking form: add FIFO sort button and expiry warning -->
+    <record id="view_stock_picking_form_expiry" model="ir.ui.view">
+        <field name="name">stock.picking.form.expiry.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <!-- FIFO button in header (before the first validate button) -->
+            <xpath expr="//button[@name='button_validate'][1]" position="before">
+                <button name="action_sort_fifo" type="object"
+                        string="Sort FIFO"
+                        class="btn-secondary"
+                        invisible="state in ('done', 'cancel')"
+                        title="Re-sort move lines oldest-expiry-first"/>
+            </xpath>
+            <!-- Warning banner inside sheet -->
+            <xpath expr="//sheet" position="inside">
+                <div class="alert alert-danger" role="alert"
+                     invisible="not has_expiring_lots">
+                    <i class="fa fa-exclamation-triangle"/>
+                    <strong>Expiry Warning:</strong> This transfer contains lots that are
+                    <strong>critical or expired</strong>. Review before validating.
+                </div>
+                <field name="has_expiring_lots" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

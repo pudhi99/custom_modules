@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_expiry_config_manager,stock.expiry.config.manager,model_stock_expiry_config,stock.group_stock_manager,1,1,1,1
+access_stock_expiry_config_user,stock.expiry.config.user,model_stock_expiry_config,stock.group_stock_user,1,0,0,0
+access_stock_expiry_history_manager,stock.expiry.history.manager,model_stock_expiry_history,stock.group_stock_manager,1,1,1,0
+access_stock_expiry_history_user,stock.expiry.history.user,model_stock_expiry_history,stock.group_stock_user,1,0,0,0
+access_stock_expiry_cost_report_manager,stock.expiry.cost.report.manager,model_stock_expiry_cost_report,stock.group_stock_manager,1,1,1,1
+access_stock_expiry_cost_report_user,stock.expiry.cost.report.user,model_stock_expiry_cost_report,stock.group_stock_user,1,0,0,0
+access_expiry_bulk_transfer_manager,expiry.bulk.transfer.manager,model_stock_expiry_bulk_transfer,stock.group_stock_manager,1,1,1,1
+access_expiry_bulk_transfer_user,expiry.bulk.transfer.user,model_stock_expiry_bulk_transfer,stock.group_stock_user,1,1,1,1
+access_expiry_send_alert_manager,expiry.send.alert.manager,model_stock_expiry_send_alert,stock.group_stock_manager,1,1,1,1
+access_expiry_send_alert_user,expiry.send.alert.user,model_stock_expiry_send_alert,stock.group_stock_user,1,1,1,1
+access_expiry_export_manager,expiry.export.manager,model_stock_expiry_export,stock.group_stock_manager,1,1,1,1
+access_expiry_export_user,expiry.export.user,model_stock_expiry_export,stock.group_stock_user,1,1,1,1

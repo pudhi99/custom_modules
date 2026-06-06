@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Level 1: 30 days (Green header)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_level_1" model="mail.template">
+        <field name="name">Expiry Alert — Level 1 (30 days)</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">⚠️ Expiry Notice (30 days): {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+  <div style="background:#28a745;padding:20px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:22px;">📦 Expiry Alert — 30 Days</h1>
+  </div>
+  <div style="padding:24px;background:#f9f9f9;">
+    <p>Dear <strong><t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/></strong>,</p>
+    <p>The following lot will expire in approximately <strong>30 days</strong>. Please plan accordingly.</p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#e8f5e9;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Lot / Serial No.</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#e8f5e9;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Days Remaining</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;color:#28a745;font-weight:bold;">
+          <t t-esc="object.days_to_expiry"/> days
+        </td>
+      </tr>
+      <tr style="background:#e8f5e9;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Qty on Hand</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;"><t t-esc="object.product_qty"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Estimated Cost at Risk</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;">
+          <t t-esc="object.estimated_cost"/>
+        </td>
+      </tr>
+      <tr style="background:#e8f5e9;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #c8e6c9;">Company</td>
+        <td style="padding:10px;border:1px solid #c8e6c9;"><t t-esc="object.company_id.name"/></td>
+      </tr>
+    </table>
+    <p style="color:#555;">Action: Begin planning to consume, promote, or discount this stock within 30 days.</p>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Auto-generated</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Level 2: 15 days (Yellow/Warning header)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_level_2" model="mail.template">
+        <field name="name">Expiry Alert — Level 2 (15 days)</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">🟡 Expiry Warning (15 days): {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:2px solid #ffc107;border-radius:8px;overflow:hidden;">
+  <div style="background:#ffc107;padding:20px;text-align:center;">
+    <h1 style="color:#212529;margin:0;font-size:22px;">⚠️ Expiry Warning — 15 Days</h1>
+  </div>
+  <div style="padding:24px;background:#fffde7;">
+    <p>Dear <strong><t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/></strong>,</p>
+    <p>The following lot expires in <strong>15 days</strong>. Please take action now.</p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#fff9c4;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #f9e400;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;">Lot / Serial No.</td>
+        <td style="padding:10px;border:1px solid #f9e400;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#fff9c4;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #f9e400;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;">Days Remaining</td>
+        <td style="padding:10px;border:1px solid #f9e400;color:#856404;font-weight:bold;font-size:18px;">
+          <t t-esc="object.days_to_expiry"/> days
+        </td>
+      </tr>
+      <tr style="background:#fff9c4;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;">Qty on Hand</td>
+        <td style="padding:10px;border:1px solid #f9e400;"><t t-esc="object.product_qty"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f9e400;">Estimated Cost at Risk</td>
+        <td style="padding:10px;border:1px solid #f9e400;"><t t-esc="object.estimated_cost"/></td>
+      </tr>
+    </table>
+    <p style="color:#856404;font-weight:bold;">Recommended: Create promotions, prioritise in deliveries, or initiate clearance transfer.</p>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Auto-generated</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Level 3: 7 days (Red/Critical header)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_level_3" model="mail.template">
+        <field name="name">Expiry Alert — Level 3 (7 days)</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">🔴 CRITICAL Expiry (7 days): {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:3px solid #dc3545;border-radius:8px;overflow:hidden;">
+  <div style="background:#dc3545;padding:20px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:22px;">🚨 CRITICAL — Expires in 7 Days!</h1>
+  </div>
+  <div style="padding:24px;background:#fff5f5;">
+    <p><strong>Dear <t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/>,</strong></p>
+    <p style="color:#dc3545;font-weight:bold;">IMMEDIATE ACTION REQUIRED: This lot expires in 7 days.</p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Lot / Serial No.</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;color:#dc3545;font-weight:bold;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Days Remaining</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;color:#dc3545;font-size:22px;font-weight:bold;">
+          <t t-esc="object.days_to_expiry"/>
+        </td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Qty on Hand</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.product_qty"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Cost at Risk</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;color:#dc3545;font-weight:bold;">
+          <t t-esc="object.estimated_cost"/>
+        </td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Company</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.company_id.name"/></td>
+      </tr>
+    </table>
+    <p style="color:#dc3545;font-weight:bold;">→ A draft clearance transfer may have been created automatically. Please process immediately.</p>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Auto-generated</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Level 4: 3 days (Urgent dark red)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_level_4" model="mail.template">
+        <field name="name">Expiry Alert — Level 4 (3 days)</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">🚨 URGENT (3 days): {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:4px solid #c82333;border-radius:8px;overflow:hidden;">
+  <div style="background:#c82333;padding:20px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:24px;">🚨 URGENT — 3 Days to Expiry!</h1>
+  </div>
+  <div style="padding:24px;background:#fff5f5;">
+    <p><strong>Dear <t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/>,</strong></p>
+    <p style="color:#c82333;font-weight:bold;font-size:16px;">
+      CRITICAL: Lot <t t-esc="object.name"/> expires in <strong>3 DAYS</strong>.
+    </p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Lot</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;color:#c82333;font-weight:bold;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Qty at Risk</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;font-weight:bold;color:#c82333;font-size:20px;">
+          <t t-esc="object.product_qty"/>
+        </td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Cost at Risk</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;font-weight:bold;color:#c82333;">
+          <t t-esc="object.estimated_cost"/>
+        </td>
+      </tr>
+    </table>
+    <p style="color:#c82333;font-weight:bold;">→ Process clearance transfer or destroy this stock IMMEDIATELY.</p>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Auto-generated</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Level 5: 1 day (Expires Tomorrow)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_level_5" model="mail.template">
+        <field name="name">Expiry Alert — Level 5 (1 day)</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">🆘 EXPIRES TOMORROW: {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:4px solid #721c24;border-radius:8px;overflow:hidden;">
+  <div style="background:#721c24;padding:20px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:24px;">🆘 EXPIRES TOMORROW!</h1>
+  </div>
+  <div style="padding:24px;background:#fff5f5;">
+    <p><strong>Dear <t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/>,</strong></p>
+    <p style="color:#721c24;font-weight:bold;font-size:18px;">
+      Lot <t t-esc="object.name"/> — <t t-esc="object.product_id.display_name"/> expires TOMORROW.
+    </p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Lot</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;color:#721c24;font-weight:bold;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Qty on Hand</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;font-weight:bold;font-size:20px;">
+          <t t-esc="object.product_qty"/>
+        </td>
+      </tr>
+      <tr style="background:#f8d7da;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #f5c6cb;">Cost at Risk</td>
+        <td style="padding:10px;border:1px solid #f5c6cb;font-weight:bold;color:#721c24;">
+          <t t-esc="object.estimated_cost"/>
+        </td>
+      </tr>
+    </table>
+    <p style="color:#721c24;font-weight:bold;">LAST CHANCE — Quarantine or destroy this stock today.</p>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Auto-generated</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Manual Alert
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_expiry_manual" model="mail.template">
+        <field name="name">Expiry Alert — Manual</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="subject">Expiry Alert: {{ object.product_id.display_name }} — Lot {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or user.company_id.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+  <div style="background:#17a2b8;padding:20px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:22px;">📋 Manual Expiry Alert</h1>
+  </div>
+  <div style="padding:24px;">
+    <p>Dear <strong><t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/></strong>,</p>
+    <p>This is a manual expiry alert for the following lot:</p>
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <tr style="background:#e3f2fd;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;width:40%;">Product</td>
+        <td style="padding:10px;border:1px solid #90caf9;"><t t-esc="object.product_id.display_name"/></td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;">Lot / Serial No.</td>
+        <td style="padding:10px;border:1px solid #90caf9;"><t t-esc="object.name"/></td>
+      </tr>
+      <tr style="background:#e3f2fd;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;">Expiry Date</td>
+        <td style="padding:10px;border:1px solid #90caf9;">
+          <t t-esc="object.expiration_date.strftime('%d %b %Y') if object.expiration_date else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;">Days Remaining</td>
+        <td style="padding:10px;border:1px solid #90caf9;"><t t-esc="object.days_to_expiry"/></td>
+      </tr>
+      <tr style="background:#e3f2fd;">
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;">Status</td>
+        <td style="padding:10px;border:1px solid #90caf9;">
+          <t t-esc="object.expiry_status.upper() if object.expiry_status else 'N/A'"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;font-weight:bold;border:1px solid #90caf9;">Qty on Hand</td>
+        <td style="padding:10px;border:1px solid #90caf9;"><t t-esc="object.product_qty"/></td>
+      </tr>
+    </table>
+    <t t-if="ctx.get('custom_message')">
+      <div style="border-left:4px solid #17a2b8;padding:12px 16px;background:#e3f2fd;margin-top:16px;">
+        <p style="margin:0;color:#0c5460;"><strong>Note:</strong> <t t-esc="ctx.get('custom_message')"/></p>
+      </div>
+    </t>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 | Manual Alert</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         Weekly Digest (model=res.company)
+         ═══════════════════════════════════════════════════════════ -->
+    <record id="mail_template_weekly_digest" model="mail.template">
+        <field name="name">Expiry Alert — Weekly Digest</field>
+        <field name="model_id" ref="base.model_res_company"/>
+        <field name="subject">📊 Weekly Expiry Digest — {{ object.name }}</field>
+        <field name="email_from">{{ (user.email_formatted or object.email or 'noreply@example.com') }}</field>
+        <field name="body_html" type="html">
+<div style="font-family:Arial,sans-serif;max-width:700px;margin:0 auto;border:1px solid #ddd;border-radius:8px;overflow:hidden;">
+  <div style="background:#2c3e50;padding:24px;text-align:center;">
+    <h1 style="color:white;margin:0;font-size:24px;">📊 Weekly Expiry Digest</h1>
+    <p style="color:#bdc3c7;margin:8px 0 0 0;"><t t-esc="object.name"/></p>
+  </div>
+  <div style="padding:24px;background:#f8f9fa;">
+    <p>Dear <strong><t t-esc="ctx['recipient_user'].name if ctx.get('recipient_user') else 'Team'"/></strong>,</p>
+    <p>Here is your weekly expiry stock summary for <strong><t t-esc="object.name"/></strong>:</p>
+
+    <t t-set="expired_lots" t-value="ctx.get('lots_by_status', {}).get('expired') or []"/>
+    <t t-set="red_lots"     t-value="ctx.get('lots_by_status', {}).get('red') or []"/>
+    <t t-set="yellow_lots"  t-value="ctx.get('lots_by_status', {}).get('yellow') or []"/>
+    <t t-set="green_lots"   t-value="ctx.get('lots_by_status', {}).get('green') or []"/>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="background:#2c3e50;color:white;">
+          <th style="padding:12px;text-align:left;">Tier</th>
+          <th style="padding:12px;text-align:center;">Lots</th>
+          <th style="padding:12px;text-align:right;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f8d7da;">
+          <td style="padding:12px;font-weight:bold;color:#721c24;border-bottom:1px solid #ddd;">⬛ EXPIRED</td>
+          <td style="padding:12px;text-align:center;border-bottom:1px solid #ddd;font-size:20px;font-weight:bold;color:#721c24;">
+            <t t-esc="len(expired_lots)"/>
+          </td>
+          <td style="padding:12px;text-align:right;border-bottom:1px solid #ddd;font-size:12px;color:#721c24;">Destroy / Write-off</td>
+        </tr>
+        <tr>
+          <td style="padding:12px;font-weight:bold;color:#dc3545;border-bottom:1px solid #ddd;">🔴 CRITICAL (RED)</td>
+          <td style="padding:12px;text-align:center;border-bottom:1px solid #ddd;font-size:20px;font-weight:bold;color:#dc3545;">
+            <t t-esc="len(red_lots)"/>
+          </td>
+          <td style="padding:12px;text-align:right;border-bottom:1px solid #ddd;font-size:12px;color:#dc3545;">Immediate clearance</td>
+        </tr>
+        <tr style="background:#fff3cd;">
+          <td style="padding:12px;font-weight:bold;color:#856404;border-bottom:1px solid #ddd;">🟡 WARNING (YELLOW)</td>
+          <td style="padding:12px;text-align:center;border-bottom:1px solid #ddd;font-size:20px;font-weight:bold;color:#856404;">
+            <t t-esc="len(yellow_lots)"/>
+          </td>
+          <td style="padding:12px;text-align:right;border-bottom:1px solid #ddd;font-size:12px;color:#856404;">Plan consumption</td>
+        </tr>
+        <tr style="background:#d4edda;">
+          <td style="padding:12px;font-weight:bold;color:#155724;border-bottom:1px solid #ddd;">🟢 SAFE (GREEN)</td>
+          <td style="padding:12px;text-align:center;border-bottom:1px solid #ddd;font-size:20px;font-weight:bold;color:#155724;">
+            <t t-esc="len(green_lots)"/>
+          </td>
+          <td style="padding:12px;text-align:right;border-bottom:1px solid #ddd;font-size:12px;color:#155724;">Monitor</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background:#e9ecef;border-radius:4px;padding:12px;margin-top:16px;">
+      <p style="margin:0;color:#6c757d;font-size:13px;">
+        Log in to <strong>Odoo → Inventory → Expiry Alerts → Dashboard</strong> to review full details and process transfers.
+      </p>
+    </div>
+  </div>
+  <div style="background:#343a40;padding:12px;text-align:center;">
+    <p style="color:#aaa;font-size:12px;margin:0;">Product Expiry Alert Manager — Odoo 19 CE | Auto-generated every Monday 08:00</p>
+  </div>
+</div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+</odoo>

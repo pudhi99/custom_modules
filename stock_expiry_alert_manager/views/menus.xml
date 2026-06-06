@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root menu under Inventory -->
+    <menuitem
+        id="menu_expiry_root"
+        name="Expiry Alerts"
+        parent="stock.menu_stock_root"
+        sequence="50"
+        groups="stock.group_stock_user"/>
+
+    <menuitem
+        id="menu_expiry_dashboard"
+        name="Dashboard"
+        parent="menu_expiry_root"
+        action="action_expiry_dashboard"
+        sequence="10"
+        groups="stock.group_stock_user"/>
+
+    <menuitem
+        id="menu_expiry_lots"
+        name="Expiring Lots"
+        parent="menu_expiry_root"
+        action="action_expiry_lot_list"
+        sequence="20"
+        groups="stock.group_stock_user"/>
+
+    <menuitem
+        id="menu_expiry_history"
+        name="Alert History"
+        parent="menu_expiry_root"
+        action="action_expiry_history"
+        sequence="30"
+        groups="stock.group_stock_user"/>
+
+    <menuitem
+        id="menu_expiry_cost_report"
+        name="Cost at Risk"
+        parent="menu_expiry_root"
+        action="action_expiry_cost_report"
+        sequence="40"
+        groups="stock.group_stock_user"/>
+
+    <menuitem
+        id="menu_expiry_config"
+        name="Settings"
+        parent="menu_expiry_root"
+        action="action_expiry_config_open"
+        sequence="100"
+        groups="stock.group_stock_manager"/>
+</odoo>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_lot_form_expiry" model="ir.ui.view">
+        <field name="name">stock.lot.form.expiry.inherit</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Smart buttons -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object"
+                        name="action_view_alert_history"
+                        icon="fa-bell"
+                        invisible="expiry_history_count == 0">
+                    <field name="expiry_history_count" widget="statinfo" string="Alerts"/>
+                </button>
+                <button class="oe_stat_button" type="object"
+                        name="action_send_alert_now"
+                        icon="fa-paper-plane"
+                        string="Send Alert"
+                        invisible="not expiration_date"/>
+            </xpath>
+
+            <!-- Status banners: alert boxes shown at top of form -->
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <div class="alert alert-danger mb-0 py-2 px-3" role="alert"
+                     invisible="expiry_status != 'expired'">
+                    <i class="fa fa-ban me-1"/>
+                    <strong>EXPIRED</strong> — This lot has passed its expiration date and must not be shipped.
+                </div>
+                <div class="alert alert-danger mb-0 py-2 px-3" role="alert"
+                     invisible="expiry_status != 'red'">
+                    <i class="fa fa-exclamation-circle me-1"/>
+                    <strong>CRITICAL</strong> — This lot expires very soon. Clearance transfer may have been created.
+                </div>
+                <div class="alert alert-warning mb-0 py-2 px-3" role="alert"
+                     invisible="expiry_status != 'yellow'">
+                    <i class="fa fa-clock-o me-1"/>
+                    <strong>WARNING</strong> — This lot is approaching expiry. Plan to consume or discount soon.
+                </div>
+            </xpath>
+
+            <!-- Expiry Alerts tab inserted inside sheet (after description group) -->
+            <xpath expr="//group[@name='description']" position="after">
+                <notebook invisible="expiration_date == False">
+                    <page string="Expiry Alerts" name="page_expiry_alerts">
+
+                        <!-- SECTION 1: Expiry Status (Vertical Layout) -->
+                        <separator string="Expiry Status" class="mt-3"/>
+                        <group col="2">
+                            <field name="expiry_status" readonly="1" widget="badge"
+                                   decoration-danger="expiry_status in ('red', 'expired')"
+                                   decoration-warning="expiry_status == 'yellow'"
+                                   decoration-success="expiry_status == 'green'"/>
+                            <field name="days_to_expiry" readonly="1" string="Days Until Expiry"/>
+                        </group>
+                        <group col="2">
+                            <field name="estimated_cost" readonly="1" widget="monetary"
+                                   string="Cost at Risk"/>
+                            <field name="expiration_date" readonly="1" string="Expiry Date"/>
+                        </group>
+
+                        <!-- SECTION 2: Alert Tracking (Vertical Layout) -->
+                        <separator string="Alert Tracking" class="mt-3"/>
+                        <group col="2">
+                            <field name="alert_count" readonly="1" string="Total Alerts Sent"/>
+                            <field name="last_alert_date" readonly="1" string="Last Alert Sent"/>
+                        </group>
+                        <group col="2">
+                            <field name="alert_level_sent" readonly="1" string="Highest Alert Level"/>
+                            <field name="auto_transfer_created" readonly="1"
+                                   string="Auto Transfer Created"/>
+                        </group>
+
+                        <!-- SECTION 3: Alert Snooze Control -->
+                        <separator string="Alert Control" class="mt-3"/>
+                        <group col="2">
+                            <field name="skip_alert_until"
+                                   string="Snooze Alerts Until"
+                                   help="Stop sending automatic alerts until this date. Useful when already processing the lot."/>
+                        </group>
+
+                        <!-- SECTION 4: Alert History Table -->
+                        <separator string="Alert History" class="mt-4"/>
+                        <field name="expiry_history_ids" readonly="1" nolabel="1">
+                            <list>
+                                <field name="alert_date" string="Sent At" width="15%"/>
+                                <field name="alert_type" string="Channel" width="12%"/>
+                                <field name="alert_level" string="Level" width="10%"/>
+                                <field name="expiry_status" string="Status" widget="badge"
+                                       decoration-danger="expiry_status in ('red','expired')"
+                                       decoration-warning="expiry_status == 'yellow'"
+                                       decoration-success="expiry_status == 'green'"
+                                       width="12%"/>
+                                <field name="days_to_expiry" string="Days Left" width="12%"/>
+                                <field name="transfer_id" string="Transfer" width="20%"/>
+                            </list>
+                        </field>
+
+                    </page>
+                </notebook>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit stock.lot list: add expiry columns with colour coding -->
+    <record id="view_stock_lot_list_expiry" model="ir.ui.view">
+        <field name="name">stock.lot.list.expiry.inherit</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="decoration-danger">expiry_status in ('red', 'expired')</attribute>
+                <attribute name="decoration-warning">expiry_status == 'yellow'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_qty']" position="after">
+                <field name="expiry_status" optional="show" widget="badge"
+                       decoration-danger="expiry_status in ('red', 'expired')"
+                       decoration-warning="expiry_status == 'yellow'"
+                       decoration-success="expiry_status == 'green'"/>
+                <field name="days_to_expiry" optional="show" string="Days Left"/>
+                <field name="expiration_date" optional="show" string="Expiry Date"/>
+                <field name="estimated_cost" optional="show" string="Cost at Risk"
+                       widget="monetary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

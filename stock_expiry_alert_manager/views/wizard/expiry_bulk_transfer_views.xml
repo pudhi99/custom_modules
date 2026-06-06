@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_expiry_bulk_transfer_form" model="ir.ui.view">
+        <field name="name">stock.expiry.bulk.transfer.form</field>
+        <field name="model">stock.expiry.bulk.transfer</field>
+        <field name="arch" type="xml">
+            <form string="Bulk Clearance Transfer">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <i class="fa fa-info-circle"/>
+                        This wizard creates draft internal transfers to move near-expiry lots to a clearance location.
+                    </div>
+                    <group>
+                        <group string="Filter">
+                            <field name="status_filter"/>
+                        </group>
+                        <group string="Destination">
+                            <field name="clearance_location_id"/>
+                        </group>
+                    </group>
+                    <group string="Preview">
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="text-muted">Lots to Move</span>
+                                <h3><field name="lot_count" readonly="1" nolabel="1"/></h3>
+                            </div>
+                            <div class="col-6">
+                                <span class="text-muted">Total Cost at Risk</span>
+                                <h3 class="text-danger">
+                                    <field name="total_cost" widget="monetary" readonly="1" nolabel="1"/>
+                                </h3>
+                            </div>
+                        </div>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_create_transfers" type="object"
+                            string="Create Transfers" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_expiry_bulk_transfer" model="ir.actions.act_window">
+        <field name="name">Bulk Clearance Transfer</field>
+        <field name="res_model">stock.expiry.bulk.transfer</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

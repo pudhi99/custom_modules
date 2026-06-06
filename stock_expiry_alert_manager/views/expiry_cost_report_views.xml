@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_expiry_cost_report_list" model="ir.ui.view">
+        <field name="name">stock.expiry.cost.report.list</field>
+        <field name="model">stock.expiry.cost.report</field>
+        <field name="arch" type="xml">
+            <list string="Expiry Cost at Risk" create="false" edit="false"
+                  decoration-danger="expiry_status in ('red', 'expired')"
+                  decoration-warning="expiry_status == 'yellow'">
+                <field name="report_date"/>
+                <field name="expiry_status" widget="badge"
+                       decoration-danger="expiry_status in ('red', 'expired')"
+                       decoration-warning="expiry_status == 'yellow'"
+                       decoration-success="expiry_status == 'green'"/>
+                <field name="lot_count"/>
+                <field name="product_count"/>
+                <field name="total_qty"/>
+                <field name="total_cost" widget="monetary"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_expiry_cost_report_graph" model="ir.ui.view">
+        <field name="name">stock.expiry.cost.report.graph</field>
+        <field name="model">stock.expiry.cost.report</field>
+        <field name="arch" type="xml">
+            <graph string="Cost at Risk by Tier" type="bar">
+                <field name="expiry_status"/>
+                <field name="total_cost" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_expiry_cost_report_pivot" model="ir.ui.view">
+        <field name="name">stock.expiry.cost.report.pivot</field>
+        <field name="model">stock.expiry.cost.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Cost at Risk Pivot">
+                <field name="report_date" type="row"/>
+                <field name="expiry_status" type="col"/>
+                <field name="total_cost" type="measure"/>
+                <field name="lot_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_expiry_cost_report_search" model="ir.ui.view">
+        <field name="name">stock.expiry.cost.report.search</field>
+        <field name="model">stock.expiry.cost.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Today" name="filter_today"
+                        domain="[('report_date', '=', context_today())]"/>
+                <group>
+                    <filter string="Status" name="group_status" domain="[]"
+                            context="{'group_by': 'expiry_status'}"/>
+                    <filter string="Date" name="group_date" domain="[]"
+                            context="{'group_by': 'report_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_expiry_cost_report" model="ir.actions.act_window">
+        <field name="name">Cost at Risk</field>
+        <field name="res_model">stock.expiry.cost.report</field>
+        <field name="view_mode">list,graph,pivot</field>
+        <field name="search_view_id" ref="view_expiry_cost_report_search"/>
+        <field name="context">{'search_default_filter_today': 1}</field>
+    </record>
+</odoo>
