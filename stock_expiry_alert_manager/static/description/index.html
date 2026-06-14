@@ -1,969 +1,724 @@
 <!-- Product Expiry Alert Manager — Odoo App Store Description -->
-<!-- All styles INLINE — Odoo html_sanitize strips <style> tags -->
+<!-- All CSS inline — Odoo sanitizer strips <style> blocks -->
+<!-- Layout uses Bootstrap row/col for app store compatibility -->
 
-<!-- ═══════════════════════════════════════════════════
-     BANNER IMAGE (shown at top of module detail page)
-═══════════════════════════════════════════════════ -->
-<section class="oe_container">
-  <div class="oe_row">
-    <div class="oe_span12" style="text-align:center;">
-      <img src="banner.png"
-           style="width:100%;max-width:1280px;height:auto;border-radius:8px;display:block;margin:0 auto;"
-           alt="Product Expiry Alert Manager Banner"/>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     HERO BANNER
-═══════════════════════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 45%,#0f3460 100%);border-radius:14px;padding:56px 40px;text-align:center;color:white;margin:16px 0;">
+    <div class="oe_span12">
+      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 45%,#0f3460 100%);border-radius:14px;padding:52px 32px;text-align:center;color:white;margin:8px 0;">
 
-      <div style="margin-bottom:16px;">
-        <span style="display:inline-block;background:#27ae60;color:white;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Odoo 19 CE</span>
-        <span style="display:inline-block;background:#2980b9;color:white;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Inventory</span>
-        <span style="display:inline-block;background:#2c3e50;color:white;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Multi-Company</span>
-        <span style="display:inline-block;background:#8e44ad;color:white;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">No Extra Cost</span>
+        <div style="margin-bottom:18px;">
+          <span style="display:inline-block;background:#27ae60;color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Odoo 19 CE</span>
+          <span style="display:inline-block;background:#2980b9;color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Inventory</span>
+          <span style="display:inline-block;background:#2c3e50;color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">Multi-Company</span>
+          <span style="display:inline-block;background:#7f3fbf;color:white;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;margin:3px;">No Extra Cost</span>
+        </div>
+
+        <h1 style="font-size:36px;font-weight:900;margin:0 0 14px;letter-spacing:-1px;color:white;">🧊 Product Expiry Alert Manager</h1>
+        <p style="font-size:17px;color:#adb5bd;margin:0 0 32px;line-height:1.65;">
+          Never ship expired stock again — automated traffic-light monitoring,<br/>5-level email alerts and smart clearance transfers inside Odoo Inventory.
+        </p>
+
+        <table style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;">
+          <tr>
+            <td style="text-align:center;padding:8px 16px;border-right:1px solid rgba(255,255,255,0.15);">
+              <div style="font-size:38px;font-weight:900;color:#e74c3c;line-height:1;">5</div>
+              <div style="font-size:10px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Alert Levels</div>
+            </td>
+            <td style="text-align:center;padding:8px 16px;border-right:1px solid rgba(255,255,255,0.15);">
+              <div style="font-size:38px;font-weight:900;color:#e74c3c;line-height:1;">3</div>
+              <div style="font-size:10px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Auto Crons</div>
+            </td>
+            <td style="text-align:center;padding:8px 16px;border-right:1px solid rgba(255,255,255,0.15);">
+              <div style="font-size:38px;font-weight:900;color:#e74c3c;line-height:1;">16</div>
+              <div style="font-size:10px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Features</div>
+            </td>
+            <td style="text-align:center;padding:8px 16px;">
+              <div style="font-size:38px;font-weight:900;color:#e74c3c;line-height:1;">100%</div>
+              <div style="font-size:10px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Odoo Native</div>
+            </td>
+          </tr>
+        </table>
+
       </div>
-
-      <h1 style="font-size:40px;font-weight:900;margin:0 0 14px;letter-spacing:-1px;">🧊 Product Expiry Alert Manager</h1>
-      <p style="font-size:18px;color:#adb5bd;margin:0 0 36px;line-height:1.6;">
-        Never ship expired stock again. Automated monitoring, colour-coded alerts<br/>and smart clearance transfers — all inside your Odoo Inventory.
-      </p>
-
-      <!-- Stats row -->
-      <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
-        <div style="text-align:center;">
-          <div style="font-size:44px;font-weight:900;color:#e74c3c;line-height:1;">5</div>
-          <div style="font-size:11px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Alert Levels</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:44px;font-weight:900;color:#e74c3c;line-height:1;">3</div>
-          <div style="font-size:11px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Auto Crons</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:44px;font-weight:900;color:#e74c3c;line-height:1;">16</div>
-          <div style="font-size:11px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Features</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:44px;font-weight:900;color:#e74c3c;line-height:1;">100%</div>
-          <div style="font-size:11px;color:#95a5a6;text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Odoo Native</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     THE PROBLEM
-═══════════════════════════════════════════════════ -->
+<!-- ═══ THE PROBLEM ═══ -->
 <section class="oe_container oe_dark">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">The Problem Every Warehouse Faces</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
-
-    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
-
-      <div style="background:white;border-left:5px solid #e74c3c;border-radius:10px;padding:28px 24px;max-width:300px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-        <div style="font-size:36px;margin-bottom:14px;">😡</div>
-        <h4 style="font-size:16px;font-weight:700;color:#1a1a2e;margin:0 0 10px;">Customer Complaints</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Near-expiry or expired stock gets shipped. Chargebacks, returns, and lost trust follow every incident.</p>
-      </div>
-
-      <div style="background:white;border-left:5px solid #f39c12;border-radius:10px;padding:28px 24px;max-width:300px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-        <div style="font-size:36px;margin-bottom:14px;">💸</div>
-        <h4 style="font-size:16px;font-weight:700;color:#1a1a2e;margin:0 0 10px;">Financial Loss</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Stock written off at full cost. No early warning means no chance to discount, donate, or redirect.</p>
-      </div>
-
-      <div style="background:white;border-left:5px solid #3498db;border-radius:10px;padding:28px 24px;max-width:300px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-        <div style="font-size:36px;margin-bottom:14px;">📋</div>
-        <h4 style="font-size:16px;font-weight:700;color:#1a1a2e;margin:0 0 10px;">Manual Monitoring</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Staff manually check lot dates in spreadsheets. Time-consuming, error-prone, always one step behind.</p>
-      </div>
-
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">The Problem Every Warehouse Faces</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 28px;border-radius:2px;"></div>
     </div>
-
-    <div style="text-align:center;margin-top:36px;font-size:20px;font-weight:800;color:#1a1a2e;">
-      ↓ &nbsp; Product Expiry Alert Manager eliminates all three &nbsp; ↓
+    <div class="oe_span4">
+      <div style="background:white;border-left:5px solid #e74c3c;border-radius:10px;padding:24px;height:100%;box-sizing:border-box;">
+        <div style="font-size:32px;margin-bottom:12px;">😡</div>
+        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Customer Complaints</h4>
+        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Near-expiry or expired stock gets shipped. Chargebacks, returns and lost trust follow every incident.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border-left:5px solid #f39c12;border-radius:10px;padding:24px;height:100%;box-sizing:border-box;">
+        <div style="font-size:32px;margin-bottom:12px;">💸</div>
+        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Financial Loss</h4>
+        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Stock written off at full cost. No early warning means no chance to discount, donate or redirect.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border-left:5px solid #3498db;border-radius:10px;padding:24px;height:100%;box-sizing:border-box;">
+        <div style="font-size:32px;margin-bottom:12px;">📋</div>
+        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Manual Monitoring</h4>
+        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.7;">Staff check lot dates in spreadsheets. Time-consuming, error-prone, always one step behind.</p>
+      </div>
+    </div>
+    <div class="oe_span12" style="text-align:center;margin-top:24px;">
+      <p style="font-size:18px;font-weight:800;color:#1a1a2e;margin:0;">↓ &nbsp; Product Expiry Alert Manager eliminates all three &nbsp; ↓</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     TRAFFIC LIGHT DASHBOARD
-═══════════════════════════════════════════════════ -->
+<!-- ═══ TRAFFIC-LIGHT DASHBOARD ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">🚦 Traffic-Light Expiry Dashboard</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 16px;border-radius:2px;"></div>
-    <p style="text-align:center;color:#6c757d;font-size:15px;margin:0 0 32px;">Every lot in your warehouse gets a live colour status. See the full picture in one Kanban view.</p>
-
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-
-      <div style="background:linear-gradient(135deg,#27ae60,#2ecc71);border-radius:12px;padding:28px 20px;text-align:center;width:150px;color:white;">
-        <div style="font-size:30px;margin-bottom:8px;">🟢</div>
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">🚦 Traffic-Light Expiry Dashboard</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 12px;border-radius:2px;"></div>
+      <p style="text-align:center;color:#6c757d;font-size:14px;margin:0 0 28px;">Every lot in your warehouse gets a live colour status. Kanban view — instant overview, zero setup.</p>
+    </div>
+    <div class="oe_span3">
+      <div style="background:linear-gradient(135deg,#27ae60,#2ecc71);border-radius:12px;padding:24px 16px;text-align:center;color:white;">
+        <div style="font-size:28px;margin-bottom:8px;">🟢</div>
         <div style="font-size:13px;font-weight:800;letter-spacing:1px;">SAFE</div>
         <div style="font-size:11px;opacity:0.85;margin-top:4px;">&gt; 30 days</div>
-        <div style="font-size:36px;font-weight:900;margin-top:10px;">248</div>
-        <div style="font-size:10px;opacity:0.75;margin-top:4px;">lots</div>
+        <div style="font-size:32px;font-weight:900;margin-top:8px;">248</div>
+        <div style="font-size:10px;opacity:0.75;">lots</div>
       </div>
-
-      <div style="background:linear-gradient(135deg,#f39c12,#f1c40f);border-radius:12px;padding:28px 20px;text-align:center;width:150px;color:#212529;">
-        <div style="font-size:30px;margin-bottom:8px;">🟡</div>
+    </div>
+    <div class="oe_span3">
+      <div style="background:linear-gradient(135deg,#f39c12,#f1c40f);border-radius:12px;padding:24px 16px;text-align:center;color:#212529;">
+        <div style="font-size:28px;margin-bottom:8px;">🟡</div>
         <div style="font-size:13px;font-weight:800;letter-spacing:1px;">WARNING</div>
         <div style="font-size:11px;opacity:0.75;margin-top:4px;">15–30 days</div>
-        <div style="font-size:36px;font-weight:900;margin-top:10px;">37</div>
-        <div style="font-size:10px;opacity:0.65;margin-top:4px;">lots</div>
+        <div style="font-size:32px;font-weight:900;margin-top:8px;">37</div>
+        <div style="font-size:10px;opacity:0.65;">lots</div>
       </div>
-
-      <div style="background:linear-gradient(135deg,#c0392b,#e74c3c);border-radius:12px;padding:28px 20px;text-align:center;width:150px;color:white;">
-        <div style="font-size:30px;margin-bottom:8px;">🔴</div>
+    </div>
+    <div class="oe_span3">
+      <div style="background:linear-gradient(135deg,#c0392b,#e74c3c);border-radius:12px;padding:24px 16px;text-align:center;color:white;">
+        <div style="font-size:28px;margin-bottom:8px;">🔴</div>
         <div style="font-size:13px;font-weight:800;letter-spacing:1px;">CRITICAL</div>
         <div style="font-size:11px;opacity:0.85;margin-top:4px;">&lt; 7 days</div>
-        <div style="font-size:36px;font-weight:900;margin-top:10px;">12</div>
-        <div style="font-size:10px;opacity:0.75;margin-top:4px;">lots</div>
+        <div style="font-size:32px;font-weight:900;margin-top:8px;">12</div>
+        <div style="font-size:10px;opacity:0.75;">lots</div>
       </div>
-
-      <div style="background:linear-gradient(135deg,#2c3e50,#34495e);border-radius:12px;padding:28px 20px;text-align:center;width:150px;color:white;">
-        <div style="font-size:30px;margin-bottom:8px;">⬛</div>
+    </div>
+    <div class="oe_span3">
+      <div style="background:linear-gradient(135deg,#2c3e50,#34495e);border-radius:12px;padding:24px 16px;text-align:center;color:white;">
+        <div style="font-size:28px;margin-bottom:8px;">⬛</div>
         <div style="font-size:13px;font-weight:800;letter-spacing:1px;">EXPIRED</div>
         <div style="font-size:11px;opacity:0.85;margin-top:4px;">Past date</div>
-        <div style="font-size:36px;font-weight:900;margin-top:10px;">4</div>
-        <div style="font-size:10px;opacity:0.75;margin-top:4px;">lots</div>
+        <div style="font-size:32px;font-weight:900;margin-top:8px;">4</div>
+        <div style="font-size:10px;opacity:0.75;">lots</div>
       </div>
-
     </div>
-    <p style="text-align:center;color:#adb5bd;font-size:12px;margin-top:16px;">Kanban view grouped by status — instant overview, zero setup</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     FEATURES GRID
-═══════════════════════════════════════════════════ -->
+<!-- ═══ FEATURES GRID ═══ -->
 <section class="oe_container oe_dark">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">Everything You Need — Nothing You Don't</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 36px;border-radius:2px;"></div>
-
-    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:center;">
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🔔</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">5-Level Email Alerts</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Auto emails at 30, 15, 7, 3, and 1 day before expiry. Each level has distinct colour-coded styling.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🚚</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Auto Clearance Transfer</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">When a lot hits RED, a draft internal transfer to your Clearance Zone is created automatically.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">📊</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Cost at Risk Report</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Financial value of stock by expiry tier — list, graph, and pivot views. Know your exposure.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">📅</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Weekly Digest Email</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Every Monday, a summary table emailed to management showing counts per tier. Board-ready.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🔃</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">FIFO Sort on Picking</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">One click re-sorts delivery order lines oldest-expiry-first (FEFO) without complex routing.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🚫</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Expired Lot Validation Block</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Odoo blocks validation of any delivery with expired lots. Hard stop at the warehouse door.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">📦</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Bulk Clearance Wizard</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Select all RED and EXPIRED lots and create clearance transfers in one action — handles dozens at once.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">📜</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Full Audit Trail</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Every alert sent, every transfer created, every digest sent — logged with timestamps and recipients.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">📄</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">PDF &amp; Excel Export</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Export filtered expiry reports as PDF (QWeb styled) or XLSX (colour-coded) for management.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🔕</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Alert Snooze</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Already handling a lot? Snooze its alerts until a future date. No alert fatigue.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🏢</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Multi-Company Ready</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Each company gets its own configuration, thresholds, recipients, and clearance location.</p>
-      </div>
-
-      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:28px 22px;width:250px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:34px;margin-bottom:14px;">🔒</div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Role-Based Access</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Managers configure everything. Users see dashboards and lots. Settings are manager-only.</p>
-      </div>
-
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">Everything You Need — Nothing You Don't</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
     </div>
+
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🔔</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">5-Level Email Alerts</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Auto emails at 30, 15, 7, 3 and 1 day before expiry. Each level has distinct colour-coded styling.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🚚</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Auto Clearance Transfer</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">When a lot hits RED, a draft internal transfer to your Clearance Zone is created automatically.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">📊</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Cost at Risk Report</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Financial value of stock by expiry tier — list, graph and pivot views. Know your exposure before it becomes a loss.</p>
+      </div>
+    </div>
+
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">📅</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Weekly Digest Email</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Every Monday a summary emailed to management showing lot counts per tier — board-ready overview.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🔃</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">FIFO Sort on Picking</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">One click re-sorts delivery order lines oldest-expiry-first (FEFO) without any complex routing setup.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🚫</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Expired Lot Block</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Odoo blocks validation of any delivery order containing expired lots. Hard stop at the warehouse door.</p>
+      </div>
+    </div>
+
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">📦</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Bulk Clearance Wizard</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Select all RED and EXPIRED lots and create clearance transfers in one action — handles dozens at once.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">📜</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Full Audit Trail</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Every alert sent, every transfer created, every digest sent — logged with timestamps and recipients.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">📄</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">PDF &amp; Excel Export</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Export filtered expiry reports as PDF or XLSX with colour-coded rows for management reporting.</p>
+      </div>
+    </div>
+
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🔕</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Alert Snooze</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Already handling a lot? Snooze its alerts until a future date. Stops alert fatigue with zero effort.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🏢</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Multi-Company Ready</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Each company gets its own configuration, thresholds, recipients and clearance location — fully isolated.</p>
+      </div>
+    </div>
+    <div class="oe_span4">
+      <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 20px;margin-bottom:18px;">
+        <div style="font-size:30px;margin-bottom:12px;">🔒</div>
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Role-Based Access</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Managers configure everything. Users see dashboards and lots. Settings are manager-only.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     EMAIL TEMPLATES SHOWCASE
-═══════════════════════════════════════════════════ -->
+<!-- ═══ EMAIL TEMPLATES SHOWCASE ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">📬 What Your Team Actually Receives</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 12px;border-radius:2px;"></div>
-    <p style="text-align:center;color:#6c757d;font-size:15px;margin:0 0 36px;">6 professionally styled email templates — each colour-coded by urgency level. Here is exactly what lands in your inbox.</p>
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">📬 What Your Team Actually Receives</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 12px;border-radius:2px;"></div>
+      <p style="text-align:center;color:#6c757d;font-size:14px;margin:0 0 28px;">6 professionally styled email templates — each colour-coded by urgency level.</p>
+    </div>
 
-    <!-- Cards row: 3 per row on desktop, 1 on mobile -->
-    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
-
-      <!-- ── Level 1: 30 days ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.10);border:1px solid #e9ecef;background:white;">
-        <!-- Tag -->
-        <div style="background:#27ae60;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;">LEVEL 1 — 30 DAYS</span>
-          <span style="background:rgba(255,255,255,0.25);color:white;font-size:10px;padding:2px 8px;border-radius:10px;">⚠️ Notice</span>
+    <!-- Level 1 -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #c8e6c9;margin-bottom:16px;">
+        <div style="background:#28a745;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">LEVEL 1 — 30 DAYS</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(255,255,255,0.25);color:white;font-size:10px;padding:2px 7px;border-radius:10px;">⚠️ Notice</span></span>
         </div>
-        <!-- Header bar -->
-        <div style="background:#28a745;padding:14px;text-align:center;">
-          <p style="color:white;font-size:14px;font-weight:800;margin:0;">📦 Expiry Alert — 30 Days</p>
+        <div style="background:#28a745;padding:10px;text-align:center;">
+          <p style="color:white;font-size:13px;font-weight:800;margin:0;">📦 Expiry Alert — 30 Days</p>
         </div>
-        <!-- Body -->
-        <div style="padding:14px;background:#f9f9f9;">
-          <p style="font-size:12px;color:#495057;margin:0 0 10px;">Dear <strong>Mitchell Admin</strong>,</p>
-          <p style="font-size:11px;color:#6c757d;margin:0 0 10px;">The following lot will expire in approximately <strong>30 days</strong>.</p>
+        <div style="padding:12px;background:#f9f9f9;">
+          <p style="font-size:11px;color:#495057;margin:0 0 8px;">Dear <strong>Mitchell Admin</strong>,</p>
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
-            <tr style="background:#e8f5e9;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Product</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#495057;">Vitamin D3 Tablets 60s</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Lot</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#495057;">VD3-2026-001</td>
-            </tr>
-            <tr style="background:#e8f5e9;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Expiry Date</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#495057;">02 Jul 2026</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Days Left</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#28a745;font-weight:800;">30 days</td>
-            </tr>
-            <tr style="background:#e8f5e9;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Qty on Hand</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#495057;">200 Box</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #c8e6c9;color:#1a1a2e;">Cost at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #c8e6c9;color:#495057;">$1,400.00</td>
-            </tr>
+            <tr style="background:#e8f5e9;"><td style="padding:4px 6px;font-weight:700;border:1px solid #c8e6c9;">Product</td><td style="padding:4px 6px;border:1px solid #c8e6c9;">Vitamin D3 Tablets</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #c8e6c9;">Lot</td><td style="padding:4px 6px;border:1px solid #c8e6c9;">VD3-2026-001</td></tr>
+            <tr style="background:#e8f5e9;"><td style="padding:4px 6px;font-weight:700;border:1px solid #c8e6c9;">Expiry</td><td style="padding:4px 6px;border:1px solid #c8e6c9;">02 Jul 2026</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #c8e6c9;">Days Left</td><td style="padding:4px 6px;border:1px solid #c8e6c9;color:#28a745;font-weight:800;">30 days</td></tr>
+            <tr style="background:#e8f5e9;"><td style="padding:4px 6px;font-weight:700;border:1px solid #c8e6c9;">Cost at Risk</td><td style="padding:4px 6px;border:1px solid #c8e6c9;">$1,400.00</td></tr>
           </table>
-          <p style="font-size:10px;color:#6c757d;margin:10px 0 0;">Action: Begin planning to consume or discount this stock.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
+    </div>
 
-      <!-- ── Level 2: 15 days ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.10);border:2px solid #ffc107;background:white;">
-        <div style="background:#ffc107;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:#212529;font-size:11px;font-weight:700;letter-spacing:1px;">LEVEL 2 — 15 DAYS</span>
-          <span style="background:rgba(0,0,0,0.12);color:#212529;font-size:10px;padding:2px 8px;border-radius:10px;">🟡 Warning</span>
+    <!-- Level 2 -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:2px solid #ffc107;margin-bottom:16px;">
+        <div style="background:#ffc107;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:#212529;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">LEVEL 2 — 15 DAYS</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(0,0,0,0.1);color:#212529;font-size:10px;padding:2px 7px;border-radius:10px;">🟡 Warning</span></span>
         </div>
-        <div style="background:#ffc107;padding:14px;text-align:center;">
-          <p style="color:#212529;font-size:14px;font-weight:800;margin:0;">⚠️ Expiry Warning — 15 Days</p>
+        <div style="background:#ffc107;padding:10px;text-align:center;">
+          <p style="color:#212529;font-size:13px;font-weight:800;margin:0;">⚠️ Expiry Warning — 15 Days</p>
         </div>
-        <div style="padding:14px;background:#fffde7;">
-          <p style="font-size:12px;color:#495057;margin:0 0 10px;">Dear <strong>Mitchell Admin</strong>,</p>
-          <p style="font-size:11px;color:#856404;font-weight:600;margin:0 0 10px;">The following lot expires in <strong>15 days</strong>. Please take action now.</p>
+        <div style="padding:12px;background:#fffde7;">
+          <p style="font-size:11px;color:#856404;font-weight:600;margin:0 0 8px;">The following lot expires in <strong>15 days</strong>.</p>
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
-            <tr style="background:#fff9c4;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Product</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#495057;">Omega-3 Fish Oil 90s</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Lot</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#495057;">OMG-2026-WARN</td>
-            </tr>
-            <tr style="background:#fff9c4;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Expiry Date</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#495057;">17 Jun 2026</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Days Left</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#856404;font-weight:800;font-size:14px;">15 days</td>
-            </tr>
-            <tr style="background:#fff9c4;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Qty on Hand</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#495057;">100 Bottle</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f9e400;color:#1a1a2e;">Cost at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #f9e400;color:#495057;">$1,000.00</td>
-            </tr>
+            <tr style="background:#fff9c4;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f9e400;">Product</td><td style="padding:4px 6px;border:1px solid #f9e400;">Omega-3 Fish Oil</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f9e400;">Lot</td><td style="padding:4px 6px;border:1px solid #f9e400;">OMG-2026-WARN</td></tr>
+            <tr style="background:#fff9c4;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f9e400;">Expiry</td><td style="padding:4px 6px;border:1px solid #f9e400;">17 Jun 2026</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f9e400;">Days Left</td><td style="padding:4px 6px;border:1px solid #f9e400;color:#856404;font-weight:800;font-size:13px;">15 days</td></tr>
+            <tr style="background:#fff9c4;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f9e400;">Cost at Risk</td><td style="padding:4px 6px;border:1px solid #f9e400;">$1,000.00</td></tr>
           </table>
-          <p style="font-size:10px;color:#856404;margin:10px 0 0;font-weight:600;">Recommended: Promotions or clearance transfer.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
+    </div>
 
-      <!-- ── Level 3: 7 days ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.12);border:3px solid #dc3545;background:white;">
-        <div style="background:#dc3545;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;">LEVEL 3 — 7 DAYS</span>
-          <span style="background:rgba(255,255,255,0.25);color:white;font-size:10px;padding:2px 8px;border-radius:10px;">🔴 Critical</span>
+    <!-- Level 3 -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:3px solid #dc3545;margin-bottom:16px;">
+        <div style="background:#dc3545;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">LEVEL 3 — 7 DAYS</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(255,255,255,0.2);color:white;font-size:10px;padding:2px 7px;border-radius:10px;">🔴 Critical</span></span>
         </div>
-        <div style="background:#dc3545;padding:14px;text-align:center;">
-          <p style="color:white;font-size:14px;font-weight:800;margin:0;">🚨 CRITICAL — Expires in 7 Days!</p>
+        <div style="background:#dc3545;padding:10px;text-align:center;">
+          <p style="color:white;font-size:13px;font-weight:800;margin:0;">🚨 CRITICAL — Expires in 7 Days!</p>
         </div>
-        <div style="padding:14px;background:#fff5f5;">
-          <p style="font-size:12px;color:#495057;margin:0 0 8px;"><strong>Dear Mitchell Admin,</strong></p>
-          <p style="font-size:11px;color:#dc3545;font-weight:700;margin:0 0 10px;">IMMEDIATE ACTION REQUIRED: This lot expires in 7 days.</p>
+        <div style="padding:12px;background:#fff5f5;">
+          <p style="font-size:11px;color:#dc3545;font-weight:700;margin:0 0 8px;">IMMEDIATE ACTION REQUIRED.</p>
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Product</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">Whey Protein 1kg</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Lot</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">WPP-2026-RED</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Expiry Date</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#dc3545;font-weight:700;">09 Jun 2026</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Days Left</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#dc3545;font-weight:900;font-size:18px;">7</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Qty on Hand</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">60 Bag</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Cost at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#dc3545;font-weight:700;">$1,680.00</td>
-            </tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Product</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">Whey Protein 1kg</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Lot</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">WPP-2026-RED</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Expiry</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#dc3545;font-weight:700;">09 Jun 2026</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Days Left</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#dc3545;font-weight:900;font-size:16px;">7</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Cost at Risk</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#dc3545;font-weight:700;">$1,680.00</td></tr>
           </table>
-          <p style="font-size:10px;color:#dc3545;margin:10px 0 0;font-weight:600;">→ Draft clearance transfer auto-created. Process now.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
+    </div>
 
-      <!-- ── Level 4: 3 days ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.14);border:4px solid #c82333;background:white;">
-        <div style="background:#c82333;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;">LEVEL 4 — 3 DAYS</span>
-          <span style="background:rgba(255,255,255,0.2);color:white;font-size:10px;padding:2px 8px;border-radius:10px;">🚨 Urgent</span>
+    <!-- Level 4 -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:4px solid #c82333;margin-bottom:16px;">
+        <div style="background:#c82333;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">LEVEL 4 — 3 DAYS</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(255,255,255,0.2);color:white;font-size:10px;padding:2px 7px;border-radius:10px;">🚨 Urgent</span></span>
         </div>
-        <div style="background:#c82333;padding:14px;text-align:center;">
-          <p style="color:white;font-size:15px;font-weight:800;margin:0;">🚨 URGENT — 3 Days to Expiry!</p>
+        <div style="background:#c82333;padding:10px;text-align:center;">
+          <p style="color:white;font-size:14px;font-weight:800;margin:0;">🚨 URGENT — 3 Days!</p>
         </div>
-        <div style="padding:14px;background:#fff5f5;">
-          <p style="font-size:12px;color:#c82333;font-weight:700;margin:0 0 10px;">CRITICAL: Lot WPP-2026-URG expires in <strong>3 DAYS</strong>.</p>
+        <div style="padding:12px;background:#fff5f5;">
+          <p style="font-size:11px;color:#c82333;font-weight:700;margin:0 0 8px;">Lot WPP-2026-URG expires in <strong>3 DAYS</strong>.</p>
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Product</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">Whey Protein 1kg</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Lot</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">WPP-2026-URG</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Expiry Date</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#c82333;font-weight:700;">05 Jun 2026</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Qty at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#c82333;font-weight:900;font-size:18px;">50</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Cost at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#c82333;font-weight:700;">$1,400.00</td>
-            </tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Product</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">Whey Protein 1kg</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Lot</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">WPP-2026-URG</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Expiry</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#c82333;font-weight:700;">05 Jun 2026</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Qty at Risk</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#c82333;font-weight:900;font-size:16px;">50</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Cost at Risk</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#c82333;font-weight:700;">$1,400.00</td></tr>
           </table>
-          <p style="font-size:10px;color:#c82333;margin:10px 0 0;font-weight:700;">→ Process clearance transfer or destroy IMMEDIATELY.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
+    </div>
 
-      <!-- ── Level 5: 1 day ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,0.16);border:4px solid #721c24;background:white;">
-        <div style="background:#721c24;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;">LEVEL 5 — TOMORROW</span>
-          <span style="background:rgba(255,255,255,0.2);color:white;font-size:10px;padding:2px 8px;border-radius:10px;">🆘 Final</span>
+    <!-- Level 5 -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:4px solid #721c24;margin-bottom:16px;">
+        <div style="background:#721c24;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">LEVEL 5 — TOMORROW</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(255,255,255,0.2);color:white;font-size:10px;padding:2px 7px;border-radius:10px;">🆘 Final</span></span>
         </div>
-        <div style="background:#721c24;padding:14px;text-align:center;">
-          <p style="color:white;font-size:16px;font-weight:900;margin:0;">🆘 EXPIRES TOMORROW!</p>
+        <div style="background:#721c24;padding:10px;text-align:center;">
+          <p style="color:white;font-size:14px;font-weight:900;margin:0;">🆘 EXPIRES TOMORROW!</p>
         </div>
-        <div style="padding:14px;background:#fff5f5;">
-          <p style="font-size:12px;color:#721c24;font-weight:700;font-size:13px;margin:0 0 10px;">Lot <strong>OMG-2026-002</strong> — Omega-3 Fish Oil expires TOMORROW.</p>
+        <div style="padding:12px;background:#fff5f5;">
+          <p style="font-size:11px;color:#721c24;font-weight:700;margin:0 0 8px;">Lot <strong>OMG-2026-002</strong> expires TOMORROW.</p>
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Product</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">Omega-3 Fish Oil 90s</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Lot</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#495057;">OMG-2026-002</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Expiry Date</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#721c24;font-weight:900;">03 Jun 2026</td>
-            </tr>
-            <tr>
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Qty on Hand</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#721c24;font-weight:900;font-size:20px;">80</td>
-            </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:5px 7px;font-weight:700;border:1px solid #f5c6cb;color:#1a1a2e;">Cost at Risk</td>
-              <td style="padding:5px 7px;border:1px solid #f5c6cb;color:#721c24;font-weight:700;">$800.00</td>
-            </tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Product</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">Omega-3 Fish Oil</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Lot</td><td style="padding:4px 6px;border:1px solid #f5c6cb;">OMG-2026-002</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Expiry</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#721c24;font-weight:900;">03 Jun 2026</td></tr>
+            <tr><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Qty on Hand</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#721c24;font-weight:900;font-size:18px;">80</td></tr>
+            <tr style="background:#f8d7da;"><td style="padding:4px 6px;font-weight:700;border:1px solid #f5c6cb;">Cost at Risk</td><td style="padding:4px 6px;border:1px solid #f5c6cb;color:#721c24;font-weight:700;">$800.00</td></tr>
           </table>
-          <p style="font-size:10px;color:#721c24;margin:10px 0 0;font-weight:700;">LAST CHANCE — Quarantine or destroy today.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
+    </div>
 
-      <!-- ── Weekly Digest ──────────────────────────────── -->
-      <div style="width:290px;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.10);border:1px solid #ddd;background:white;">
-        <div style="background:#2c3e50;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
-          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;">WEEKLY DIGEST</span>
-          <span style="background:rgba(255,255,255,0.15);color:white;font-size:10px;padding:2px 8px;border-radius:10px;">📊 Every Monday</span>
+    <!-- Weekly Digest -->
+    <div class="oe_span4">
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #dee2e6;margin-bottom:16px;">
+        <div style="background:#2c3e50;padding:8px 12px;display:table;width:100%;box-sizing:border-box;">
+          <span style="color:white;font-size:11px;font-weight:700;letter-spacing:1px;display:table-cell;">WEEKLY DIGEST</span>
+          <span style="display:table-cell;text-align:right;"><span style="background:rgba(255,255,255,0.15);color:white;font-size:10px;padding:2px 7px;border-radius:10px;">📊 Monday</span></span>
         </div>
-        <div style="background:#2c3e50;padding:14px;text-align:center;">
-          <p style="color:white;font-size:14px;font-weight:800;margin:0;">📊 Weekly Expiry Digest</p>
-          <p style="color:#bdc3c7;font-size:10px;margin:4px 0 0;">NutriVita Distributors Pvt Ltd</p>
+        <div style="background:#2c3e50;padding:10px;text-align:center;">
+          <p style="color:white;font-size:13px;font-weight:800;margin:0;">📊 Weekly Expiry Digest</p>
+          <p style="color:#bdc3c7;font-size:9px;margin:3px 0 0;">NutriVita Distributors Pvt Ltd</p>
         </div>
-        <div style="padding:14px;background:#f8f9fa;">
-          <p style="font-size:11px;color:#495057;margin:0 0 12px;">Dear <strong>Mitchell Admin</strong>, here is your weekly summary:</p>
+        <div style="padding:12px;background:#f8f9fa;">
           <table style="width:100%;border-collapse:collapse;font-size:11px;">
             <tr style="background:#2c3e50;color:white;">
-              <th style="padding:7px;text-align:left;">Tier</th>
-              <th style="padding:7px;text-align:center;">Lots</th>
-              <th style="padding:7px;text-align:right;">Action</th>
+              <th style="padding:6px 8px;text-align:left;">Tier</th>
+              <th style="padding:6px 8px;text-align:center;">Lots</th>
+              <th style="padding:6px 8px;text-align:right;">Action</th>
             </tr>
-            <tr style="background:#f8d7da;">
-              <td style="padding:7px;font-weight:700;color:#721c24;border-bottom:1px solid #e9ecef;">⬛ EXPIRED</td>
-              <td style="padding:7px;text-align:center;font-weight:900;font-size:16px;color:#721c24;border-bottom:1px solid #e9ecef;">4</td>
-              <td style="padding:7px;text-align:right;font-size:10px;color:#721c24;border-bottom:1px solid #e9ecef;">Write-off</td>
-            </tr>
-            <tr>
-              <td style="padding:7px;font-weight:700;color:#dc3545;border-bottom:1px solid #e9ecef;">🔴 CRITICAL</td>
-              <td style="padding:7px;text-align:center;font-weight:900;font-size:16px;color:#dc3545;border-bottom:1px solid #e9ecef;">12</td>
-              <td style="padding:7px;text-align:right;font-size:10px;color:#dc3545;border-bottom:1px solid #e9ecef;">Clearance</td>
-            </tr>
-            <tr style="background:#fff3cd;">
-              <td style="padding:7px;font-weight:700;color:#856404;border-bottom:1px solid #e9ecef;">🟡 WARNING</td>
-              <td style="padding:7px;text-align:center;font-weight:900;font-size:16px;color:#856404;border-bottom:1px solid #e9ecef;">37</td>
-              <td style="padding:7px;text-align:right;font-size:10px;color:#856404;border-bottom:1px solid #e9ecef;">Discount</td>
-            </tr>
-            <tr style="background:#d4edda;">
-              <td style="padding:7px;font-weight:700;color:#155724;">🟢 SAFE</td>
-              <td style="padding:7px;text-align:center;font-weight:900;font-size:16px;color:#155724;">248</td>
-              <td style="padding:7px;text-align:right;font-size:10px;color:#155724;">Monitor</td>
-            </tr>
+            <tr style="background:#f8d7da;"><td style="padding:6px 8px;font-weight:700;color:#721c24;border-bottom:1px solid #e9ecef;">⬛ EXPIRED</td><td style="padding:6px 8px;text-align:center;font-weight:900;font-size:14px;color:#721c24;border-bottom:1px solid #e9ecef;">4</td><td style="padding:6px 8px;text-align:right;font-size:10px;color:#721c24;border-bottom:1px solid #e9ecef;">Write-off</td></tr>
+            <tr><td style="padding:6px 8px;font-weight:700;color:#dc3545;border-bottom:1px solid #e9ecef;">🔴 CRITICAL</td><td style="padding:6px 8px;text-align:center;font-weight:900;font-size:14px;color:#dc3545;border-bottom:1px solid #e9ecef;">12</td><td style="padding:6px 8px;text-align:right;font-size:10px;color:#dc3545;border-bottom:1px solid #e9ecef;">Clearance</td></tr>
+            <tr style="background:#fff3cd;"><td style="padding:6px 8px;font-weight:700;color:#856404;border-bottom:1px solid #e9ecef;">🟡 WARNING</td><td style="padding:6px 8px;text-align:center;font-weight:900;font-size:14px;color:#856404;border-bottom:1px solid #e9ecef;">37</td><td style="padding:6px 8px;text-align:right;font-size:10px;color:#856404;border-bottom:1px solid #e9ecef;">Discount</td></tr>
+            <tr style="background:#d4edda;"><td style="padding:6px 8px;font-weight:700;color:#155724;">🟢 SAFE</td><td style="padding:6px 8px;text-align:center;font-weight:900;font-size:14px;color:#155724;">248</td><td style="padding:6px 8px;text-align:right;font-size:10px;color:#155724;">Monitor</td></tr>
           </table>
-          <p style="font-size:10px;color:#6c757d;margin:10px 0 0;">Auto-sent every Monday 08:00 to all configured recipients.</p>
         </div>
-        <div style="background:#343a40;padding:6px;text-align:center;">
-          <p style="color:#999;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-        </div>
+        <div style="background:#343a40;padding:5px;text-align:center;"><p style="color:#999;font-size:9px;margin:0;">Product Expiry Alert Manager — Odoo 19</p></div>
       </div>
-
-    </div>
-
-    <!-- Label row -->
-    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px;">
-      <span style="background:#e8f5e9;color:#27ae60;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">🟢 Level 1 — 30 Days</span>
-      <span style="background:#fff9c4;color:#856404;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">🟡 Level 2 — 15 Days</span>
-      <span style="background:#f8d7da;color:#dc3545;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">🔴 Level 3 — 7 Days</span>
-      <span style="background:#f5c6cb;color:#c82333;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">🚨 Level 4 — 3 Days</span>
-      <span style="background:#f5c6cb;color:#721c24;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">🆘 Level 5 — Tomorrow</span>
-      <span style="background:#e9ecef;color:#2c3e50;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;">📊 Weekly Digest</span>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     ALERT TIMELINE + EMAIL PREVIEW
-═══════════════════════════════════════════════════ -->
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-
-    <div style="display:flex;gap:40px;flex-wrap:wrap;justify-content:center;align-items:flex-start;">
-
-      <!-- Left: Alert Timeline -->
-      <div style="flex:1;min-width:280px;max-width:460px;">
-        <h2 class="oe_slogan" style="text-align:left;font-size:26px;font-weight:800;color:#1a1a2e;">⏰ Automated Alert Timeline</h2>
-        <div style="width:56px;height:4px;background:#e74c3c;margin:0 0 20px;border-radius:2px;"></div>
-        <p style="color:#6c757d;font-size:14px;line-height:1.7;margin:0 0 24px;">
-          As each lot approaches its expiry, a sequence of escalating alerts fires automatically. No manual checking. No missed lots.
-        </p>
-
-        <!-- Timeline items -->
-        <div style="border-left:3px solid #27ae60;padding-left:20px;margin-bottom:12px;">
-          <div style="background:white;border:1px solid #d4edda;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#155724;">⚠️ Day −30 &nbsp; Level 1 — Early Notice</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Begin planning — promotions, FIFO prioritisation, clearance scheduling.</div>
-          </div>
-        </div>
-        <div style="border-left:3px solid #f39c12;padding-left:20px;margin-bottom:12px;">
-          <div style="background:white;border:1px solid #fff3cd;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#856404;">🟡 Day −15 &nbsp; Level 2 — Warning</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Initiate discounts or delivery prioritisation now.</div>
-          </div>
-        </div>
-        <div style="border-left:3px solid #e74c3c;padding-left:20px;margin-bottom:12px;">
-          <div style="background:white;border:1px solid #f8d7da;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#721c24;">🔴 Day −7 &nbsp; Level 3 — Critical + Auto Transfer</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Draft clearance transfer created automatically. Immediate action required.</div>
-          </div>
-        </div>
-        <div style="border-left:3px solid #c0392b;padding-left:20px;margin-bottom:12px;">
-          <div style="background:white;border:1px solid #f8d7da;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#c0392b;">🚨 Day −3 &nbsp; Level 4 — Urgent</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Process clearance transfer or quarantine stock today.</div>
-          </div>
-        </div>
-        <div style="border-left:3px solid #721c24;padding-left:20px;margin-bottom:12px;">
-          <div style="background:white;border:1px solid #f5c6cb;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#721c24;">🆘 Day −1 &nbsp; Level 5 — Expires Tomorrow</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Last chance alert. Destroy or quarantine immediately.</div>
-          </div>
-        </div>
-        <div style="border-left:3px solid #2c3e50;padding-left:20px;margin-bottom:12px;">
-          <div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:14px 18px;">
-            <div style="font-weight:700;font-size:14px;color:#2c3e50;">⬛ Day 0 &nbsp; Validation Blocked</div>
-            <div style="font-size:12px;color:#6c757d;margin-top:4px;">Expired lot cannot be shipped. Odoo blocks validation.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Email Mockups -->
-      <div style="flex:1;min-width:280px;max-width:380px;">
-        <h2 class="oe_slogan" style="text-align:left;font-size:26px;font-weight:800;color:#1a1a2e;">📬 Email Previews</h2>
-        <div style="width:56px;height:4px;background:#e74c3c;margin:0 0 20px;border-radius:2px;"></div>
-
-        <!-- Level 5 Email Mockup -->
-        <div style="border:3px solid #721c24;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.12);margin-bottom:20px;">
-          <div style="background:#721c24;padding:16px;text-align:center;">
-            <p style="color:white;font-size:17px;font-weight:800;margin:0;">🆘 EXPIRES TOMORROW!</p>
-          </div>
-          <div style="padding:20px;background:#fff5f5;">
-            <p style="color:#721c24;font-weight:700;margin:0 0 10px;font-size:13px;">Dear Mitchell Admin,</p>
-            <p style="color:#495057;font-size:12px;margin:0 0 14px;">Lot <strong>OMG-2026-002</strong> — Omega-3 Fish Oil Capsules expires TOMORROW.</p>
-            <table style="width:100%;border-collapse:collapse;font-size:12px;">
-              <tr style="background:#f8d7da;">
-                <td style="padding:7px;font-weight:700;border:1px solid #f5c6cb;">Product</td>
-                <td style="padding:7px;border:1px solid #f5c6cb;">Omega-3 Fish Oil 90s</td>
-              </tr>
-              <tr>
-                <td style="padding:7px;font-weight:700;border:1px solid #f5c6cb;">Lot</td>
-                <td style="padding:7px;border:1px solid #f5c6cb;">OMG-2026-002</td>
-              </tr>
-              <tr style="background:#f8d7da;">
-                <td style="padding:7px;font-weight:700;border:1px solid #f5c6cb;">Expiry Date</td>
-                <td style="padding:7px;border:1px solid #f5c6cb;color:#721c24;font-weight:700;">03 Jun 2026</td>
-              </tr>
-              <tr>
-                <td style="padding:7px;font-weight:700;border:1px solid #f5c6cb;">Qty on Hand</td>
-                <td style="padding:7px;border:1px solid #f5c6cb;font-size:18px;font-weight:900;color:#721c24;">80</td>
-              </tr>
-            </table>
-          </div>
-          <div style="background:#343a40;padding:7px;text-align:center;">
-            <p style="color:#aaa;font-size:10px;margin:0;">Product Expiry Alert Manager — Odoo 19</p>
-          </div>
-        </div>
-
-        <!-- Weekly Digest Mockup -->
-        <div style="border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.09);">
-          <div style="background:#2c3e50;padding:14px;text-align:center;">
-            <p style="color:white;font-size:15px;font-weight:800;margin:0;">📊 Weekly Expiry Digest</p>
-            <p style="color:#bdc3c7;font-size:11px;margin:4px 0 0;">NutriVita Distributors Pvt Ltd</p>
-          </div>
-          <div style="padding:16px;background:#f8f9fa;">
-            <p style="font-size:12px;color:#495057;margin:0 0 12px;">Dear <strong>Mitchell Admin</strong>, here is your weekly summary:</p>
-            <table style="width:100%;border-collapse:collapse;font-size:12px;">
-              <tr style="background:#2c3e50;color:white;">
-                <th style="padding:8px;text-align:left;">Tier</th>
-                <th style="padding:8px;text-align:center;">Lots</th>
-                <th style="padding:8px;text-align:right;">Action</th>
-              </tr>
-              <tr style="background:#f8d7da;">
-                <td style="padding:8px;font-weight:700;color:#721c24;">⬛ EXPIRED</td>
-                <td style="padding:8px;text-align:center;font-weight:900;font-size:16px;color:#721c24;">4</td>
-                <td style="padding:8px;text-align:right;font-size:11px;color:#721c24;">Write-off</td>
-              </tr>
-              <tr>
-                <td style="padding:8px;font-weight:700;color:#dc3545;">🔴 CRITICAL</td>
-                <td style="padding:8px;text-align:center;font-weight:900;font-size:16px;color:#dc3545;">12</td>
-                <td style="padding:8px;text-align:right;font-size:11px;color:#dc3545;">Clearance</td>
-              </tr>
-              <tr style="background:#fff3cd;">
-                <td style="padding:8px;font-weight:700;color:#856404;">🟡 WARNING</td>
-                <td style="padding:8px;text-align:center;font-weight:900;font-size:16px;color:#856404;">37</td>
-                <td style="padding:8px;text-align:right;font-size:11px;color:#856404;">Discount</td>
-              </tr>
-              <tr style="background:#d4edda;">
-                <td style="padding:8px;font-weight:700;color:#155724;">🟢 SAFE</td>
-                <td style="padding:8px;text-align:center;font-weight:900;font-size:16px;color:#155724;">248</td>
-                <td style="padding:8px;text-align:right;font-size:11px;color:#155724;">Monitor</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     WHO IS IT FOR
-═══════════════════════════════════════════════════ -->
+<!-- ═══ ALERT TIMELINE ═══ -->
 <section class="oe_container oe_dark">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">Who Is This Module For?</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
+    <div class="oe_span6">
+      <h2 class="oe_slogan" style="text-align:left;font-size:26px;font-weight:800;color:#1a1a2e;">⏰ Automated Alert Timeline</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 0 20px;border-radius:2px;"></div>
+      <p style="color:#6c757d;font-size:13px;line-height:1.7;margin:0 0 20px;">As each lot approaches its expiry date, a sequence of escalating alerts fires automatically.</p>
 
-    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:38px;flex-shrink:0;width:52px;text-align:center;">🏥</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Pharmaceutical &amp; Healthcare Distributors</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Medicines, vaccines, supplements — strict expiry compliance is non-negotiable. Regulatory bodies demand it. This module enforces it automatically.</p>
+      <div style="border-left:3px solid #27ae60;padding-left:16px;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #d4edda;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#155724;">⚠️ Day −30 — Level 1 Early Notice</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Begin planning promotions, FIFO or clearance scheduling.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #f39c12;padding-left:16px;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #fff3cd;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#856404;">🟡 Day −15 — Level 2 Warning</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Initiate discounts or delivery prioritisation now.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #e74c3c;padding-left:16px;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #f8d7da;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#721c24;">🔴 Day −7 — Level 3 Critical + Auto Transfer</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Draft clearance transfer created automatically.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #c0392b;padding-left:16px;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #f5c6cb;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#c0392b;">🚨 Day −3 — Level 4 Urgent</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Process clearance transfer or quarantine today.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #721c24;padding-left:16px;margin-bottom:10px;">
+        <div style="background:white;border:1px solid #f5c6cb;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#721c24;">🆘 Day −1 — Level 5 Expires Tomorrow</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Last chance. Destroy or quarantine immediately.</div>
+        </div>
+      </div>
+      <div style="border-left:3px solid #2c3e50;padding-left:16px;margin-bottom:10px;">
+        <div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:12px 14px;">
+          <div style="font-weight:700;font-size:13px;color:#2c3e50;">⬛ Day 0 — Validation Blocked</div>
+          <div style="font-size:11px;color:#6c757d;margin-top:3px;">Expired lot cannot be shipped. Odoo blocks validation.</div>
+        </div>
       </div>
     </div>
 
-    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:38px;flex-shrink:0;width:52px;text-align:center;">🥗</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Food &amp; Beverage Manufacturers</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Dairy, bakery, chilled goods, packaged food — FEFO picking and near-expiry clearance alerts protect margins and food safety compliance.</p>
+    <div class="oe_span6">
+      <h2 class="oe_slogan" style="text-align:left;font-size:26px;font-weight:800;color:#1a1a2e;">🚀 Up &amp; Running in 10 Minutes</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 0 20px;border-radius:2px;"></div>
+
+      <div style="background:white;border:1px solid #e9ecef;border-radius:10px;padding:16px 20px;margin-bottom:10px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="width:40px;vertical-align:top;padding-top:2px;">
+              <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:32px;height:32px;border-radius:50%;text-align:center;font-size:14px;font-weight:900;line-height:32px;">1</div>
+            </td>
+            <td style="padding-left:12px;">
+              <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 3px;">Install the Module</h4>
+              <p style="font-size:11px;color:#6c757d;margin:0;">Apps → Search "Product Expiry Alert Manager" → Install. All crons and menus pre-configured.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:white;border:1px solid #e9ecef;border-radius:10px;padding:16px 20px;margin-bottom:10px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="width:40px;vertical-align:top;padding-top:2px;">
+              <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:32px;height:32px;border-radius:50%;text-align:center;font-size:14px;font-weight:900;line-height:32px;">2</div>
+            </td>
+            <td style="padding-left:12px;">
+              <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 3px;">Enable Lot Tracking</h4>
+              <p style="font-size:11px;color:#6c757d;margin:0;">Product → Inventory tab → Tracking = By Lots, enable Use Expiration Dates.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:white;border:1px solid #e9ecef;border-radius:10px;padding:16px 20px;margin-bottom:10px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="width:40px;vertical-align:top;padding-top:2px;">
+              <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:32px;height:32px;border-radius:50%;text-align:center;font-size:14px;font-weight:900;line-height:32px;">3</div>
+            </td>
+            <td style="padding-left:12px;">
+              <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 3px;">Create Clearance Location</h4>
+              <p style="font-size:11px;color:#6c757d;margin:0;">Inventory → Locations → New → "Clearance Zone" (internal). Near-expiry stock auto-moves here.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:white;border:1px solid #e9ecef;border-radius:10px;padding:16px 20px;margin-bottom:10px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="width:40px;vertical-align:top;padding-top:2px;">
+              <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:32px;height:32px;border-radius:50%;text-align:center;font-size:14px;font-weight:900;line-height:32px;">4</div>
+            </td>
+            <td style="padding-left:12px;">
+              <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 3px;">Configure Settings</h4>
+              <p style="font-size:11px;color:#6c757d;margin:0;">Inventory → Expiry Alerts → Settings. Set thresholds, clearance location and email recipients.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:white;border:1px solid #e9ecef;border-radius:10px;padding:16px 20px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="width:40px;vertical-align:top;padding-top:2px;">
+              <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:32px;height:32px;border-radius:50%;text-align:center;font-size:14px;font-weight:900;line-height:32px;">5</div>
+            </td>
+            <td style="padding-left:12px;">
+              <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 3px;">Receive Stock — System Takes Over</h4>
+              <p style="font-size:11px;color:#6c757d;margin:0;">Validate receipts with lot numbers and expiry dates. 3 crons run daily — fully automatic from day one.</p>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
-
-    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:38px;flex-shrink:0;width:52px;text-align:center;">💄</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">FMCG &amp; Cosmetics Companies</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Skincare, haircare, personal care — batch-level expiry tracking with automated alerts prevents selling out-of-date products.</p>
-      </div>
-    </div>
-
-    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:38px;flex-shrink:0;width:52px;text-align:center;">🔬</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Chemical &amp; Laboratory Suppliers</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Reagents, solvents, calibration standards all have expiry dates. Lab-level traceability with zero extra effort.</p>
-      </div>
-    </div>
-
-    <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-      <div style="font-size:38px;flex-shrink:0;width:52px;text-align:center;">🛒</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Retail &amp; E-commerce with Perishables</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Selling to consumers? The expired-lot delivery block prevents chargebacks before they ever happen.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     QUICKSTART STEPS
-═══════════════════════════════════════════════════ -->
+<!-- ═══ WHO IS IT FOR ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">🚀 Up and Running in 10 Minutes</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 12px;border-radius:2px;"></div>
-    <p style="text-align:center;color:#6c757d;font-size:15px;margin:0 0 32px;">No custom code. No consultants. Just configure and go.</p>
-
-    <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 28px;margin-bottom:14px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;text-align:center;line-height:44px;">1</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Install the Module</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Go to <strong>Apps → Search "Product Expiry Alert Manager" → Install</strong>. All data, crons, and menus are pre-configured out of the box.</p>
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">Who Is This Module For?</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 28px;border-radius:2px;"></div>
+    </div>
+    <div class="oe_span6">
+      <div style="background:#fef9f9;border:1px solid #fad7d7;border-radius:10px;padding:20px;margin-bottom:14px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="font-size:32px;width:52px;vertical-align:top;padding-top:2px;">🏥</td>
+            <td style="padding-left:14px;">
+              <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 5px;">Pharmaceutical &amp; Healthcare</h4>
+              <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Medicines, vaccines, supplements — strict expiry compliance enforced automatically.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:#fef9f9;border:1px solid #fad7d7;border-radius:10px;padding:20px;margin-bottom:14px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="font-size:32px;width:52px;vertical-align:top;padding-top:2px;">🥗</td>
+            <td style="padding-left:14px;">
+              <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 5px;">Food &amp; Beverage Manufacturers</h4>
+              <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Dairy, bakery, chilled goods — FEFO picking and near-expiry alerts protect margins.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="background:#fef9f9;border:1px solid #fad7d7;border-radius:10px;padding:20px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="font-size:32px;width:52px;vertical-align:top;padding-top:2px;">💄</td>
+            <td style="padding-left:14px;">
+              <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 5px;">FMCG &amp; Cosmetics</h4>
+              <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Skincare, haircare — batch-level expiry tracking prevents selling out-of-date products.</p>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
-
-    <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 28px;margin-bottom:14px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;text-align:center;line-height:44px;">2</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Enable Lot Tracking on Products</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">On each product's <strong>Inventory tab</strong> — Tracking = "By Lots", enable "Use Expiration Dates", set Expiration Time to your shelf life in days.</p>
+    <div class="oe_span6">
+      <div style="background:#fef9f9;border:1px solid #fad7d7;border-radius:10px;padding:20px;margin-bottom:14px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="font-size:32px;width:52px;vertical-align:top;padding-top:2px;">🔬</td>
+            <td style="padding-left:14px;">
+              <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 5px;">Chemical &amp; Laboratory Suppliers</h4>
+              <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Reagents, solvents, calibration standards — lab-level traceability with zero extra effort.</p>
+            </td>
+          </tr>
+        </table>
       </div>
-    </div>
-
-    <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 28px;margin-bottom:14px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;text-align:center;line-height:44px;">3</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Create a Clearance Location</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">In <strong>Inventory → Configuration → Locations</strong>, add an internal location named "Clearance Zone". Near-expiry stock moves here automatically.</p>
-      </div>
-    </div>
-
-    <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 28px;margin-bottom:14px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;text-align:center;line-height:44px;">4</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Configure Alert Settings</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Go to <strong>Inventory → Expiry Alerts → Settings</strong>. Set your threshold days, clearance location, and add email recipients. Done.</p>
-      </div>
-    </div>
-
-    <div style="background:white;border:1px solid #e9ecef;border-radius:12px;padding:24px 28px;margin-bottom:14px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;flex-shrink:0;text-align:center;line-height:44px;">5</div>
-      <div>
-        <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Receive Stock with Lot Numbers</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Validate receipts normally. Enter lot numbers and expiry dates. The system monitors every lot from that moment onwards — fully automatic.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     ROI
-═══════════════════════════════════════════════════ -->
-<section class="oe_container oe_dark">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">📈 Real-World ROI</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
-
-    <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;">
-
-      <div style="background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;border-radius:12px;padding:32px 22px;text-align:center;width:200px;">
-        <div style="font-size:44px;font-weight:900;line-height:1;">2%</div>
-        <div style="font-size:13px;opacity:0.9;margin-top:8px;">Expiry write-off rate prevented</div>
-        <div style="font-size:11px;margin-top:10px;opacity:0.75;border-top:1px solid rgba(255,255,255,0.3);padding-top:10px;">₹50L stock → ₹1L/month saved</div>
-      </div>
-
-      <div style="background:linear-gradient(135deg,#2980b9,#3498db);color:white;border-radius:12px;padding:32px 22px;text-align:center;width:200px;">
-        <div style="font-size:44px;font-weight:900;line-height:1;">0</div>
-        <div style="font-size:13px;opacity:0.9;margin-top:8px;">Expired lots shipped to customers</div>
-        <div style="font-size:11px;margin-top:10px;opacity:0.75;border-top:1px solid rgba(255,255,255,0.3);padding-top:10px;">Hard validation block, every time</div>
-      </div>
-
-      <div style="background:linear-gradient(135deg,#8e44ad,#9b59b6);color:white;border-radius:12px;padding:32px 22px;text-align:center;width:200px;">
-        <div style="font-size:44px;font-weight:900;line-height:1;">10<span style="font-size:22px;">min</span></div>
-        <div style="font-size:13px;opacity:0.9;margin-top:8px;">Setup time from install to live</div>
-        <div style="font-size:11px;margin-top:10px;opacity:0.75;border-top:1px solid rgba(255,255,255,0.3);padding-top:10px;">No custom development needed</div>
-      </div>
-
-      <div style="background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;border-radius:12px;padding:32px 22px;text-align:center;width:200px;">
-        <div style="font-size:44px;font-weight:900;line-height:1;">100%</div>
-        <div style="font-size:13px;opacity:0.9;margin-top:8px;">Audit trail for every action</div>
-        <div style="font-size:11px;margin-top:10px;opacity:0.75;border-top:1px solid rgba(255,255,255,0.3);padding-top:10px;">Compliance-ready out of the box</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     FEATURE OVERVIEW IMAGE
-═══════════════════════════════════════════════════ -->
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">🖥️ Feature Overview</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 24px;border-radius:2px;"></div>
-    <div style="text-align:center;">
-      <img src="feature_overview.png"
-           style="width:100%;max-width:1200px;height:auto;border-radius:10px;border:1px solid #e9ecef;box-shadow:0 4px 20px rgba(0,0,0,0.10);display:block;margin:0 auto;"
-           alt="Product Expiry Alert Manager — Full Feature Overview"/>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     TECHNICAL SPECS
-═══════════════════════════════════════════════════ -->
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">⚙️ Technical Specifications</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
-
-    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;">
-
-      <div style="flex:1;min-width:280px;max-width:480px;">
-        <table style="width:100%;border-collapse:collapse;font-size:13px;">
-          <tr><th colspan="2" style="background:#1a1a2e;color:white;padding:12px 14px;text-align:left;border-radius:8px 8px 0 0;">Module Information</th></tr>
-          <tr><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;width:45%;">Module Name</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">stock_expiry_alert_manager</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Version</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">19.0.1.0.0</td></tr>
-          <tr><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Compatibility</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">Odoo 19 Community Edition</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">License</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">LGPL-3</td></tr>
-          <tr><td style="padding:10px 14px;color:#6c757d;">Support</td><td style="padding:10px 14px;font-weight:600;">prudhvi.inumarthi99@gmail.com</td></tr>
+      <div style="background:#fef9f9;border:1px solid #fad7d7;border-radius:10px;padding:20px;margin-bottom:14px;">
+        <table style="width:100%;border-collapse:collapse;">
+          <tr>
+            <td style="font-size:32px;width:52px;vertical-align:top;padding-top:2px;">🛒</td>
+            <td style="padding-left:14px;">
+              <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 5px;">Retail &amp; E-commerce with Perishables</h4>
+              <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">The expired-lot delivery block prevents chargebacks before they ever happen.</p>
+            </td>
+          </tr>
         </table>
       </div>
 
-      <div style="flex:1;min-width:280px;max-width:480px;">
-        <table style="width:100%;border-collapse:collapse;font-size:13px;">
-          <tr><th colspan="2" style="background:#1a1a2e;color:white;padding:12px 14px;text-align:left;border-radius:8px 8px 0 0;">Dependencies &amp; What's Included</th></tr>
-          <tr><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;width:45%;">Depends On</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">base, stock, product_expiry, mail</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">New Models</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">4 (config, history, cost report, lot ext.)</td></tr>
-          <tr><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Scheduled Actions</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">3 auto crons (status, alerts, digest)</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Email Templates</td><td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">7 QWeb templates (5 levels + manual + digest)</td></tr>
-          <tr><td style="padding:10px 14px;color:#6c757d;">Views</td><td style="padding:10px 14px;font-weight:600;">15 views (kanban, list, form, graph, pivot)</td></tr>
+      <!-- ROI mini box -->
+      <div style="background:linear-gradient(135deg,#1a1a2e,#c0392b);border-radius:10px;padding:20px;color:white;">
+        <h4 style="font-size:14px;font-weight:700;color:white;margin:0 0 12px;">📈 Real-World ROI</h4>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <tr>
+            <td style="padding:5px 0;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.1);">✅ 2% expiry write-off prevented</td>
+            <td style="padding:5px 0;color:white;font-weight:700;text-align:right;border-bottom:1px solid rgba(255,255,255,0.1);">₹1L/month saved</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 0;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.1);">✅ 0 expired lots shipped</td>
+            <td style="padding:5px 0;color:white;font-weight:700;text-align:right;border-bottom:1px solid rgba(255,255,255,0.1);">Hard block</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 0;color:rgba(255,255,255,0.8);">✅ Setup time from install</td>
+            <td style="padding:5px 0;color:white;font-weight:700;text-align:right;">10 minutes</td>
+          </tr>
         </table>
       </div>
-
     </div>
-
-    <!-- Feature checklist -->
-    <div style="margin-top:28px;background:#f8f9fa;border-radius:12px;padding:24px 28px;">
-      <h4 style="font-size:15px;font-weight:700;color:#1a1a2e;margin:0 0 16px;">Complete Feature Checklist</h4>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:200px;">
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Traffic-light Kanban Dashboard</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ 5-tier tiered email alerts</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Auto clearance transfers</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Weekly digest email</p>
-          <p style="font-size:13px;color:#495057;margin:0;">✅ FIFO sort on delivery orders</p>
-        </div>
-        <div style="flex:1;min-width:200px;">
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Expired lot validation block</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Bulk clearance wizard</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Cost at Risk report (3 views)</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ PDF + XLSX export</p>
-          <p style="font-size:13px;color:#495057;margin:0;">✅ Full alert audit trail</p>
-        </div>
-        <div style="flex:1;min-width:200px;">
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Alert snooze per lot</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Multi-company isolated config</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Category &amp; location filters</p>
-          <p style="font-size:13px;color:#495057;margin:0 0 8px;">✅ Manual alert wizard</p>
-          <p style="font-size:13px;color:#495057;margin:0;">✅ Role-based access control</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     FAQ
-═══════════════════════════════════════════════════ -->
+<!-- ═══ TECH SPECS ═══ -->
 <section class="oe_container oe_dark">
   <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan" style="color:#1a1a2e;font-size:30px;font-weight:800;">❓ Frequently Asked Questions</h2>
-    <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 32px;border-radius:2px;"></div>
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">⚙️ Technical Specifications</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 28px;border-radius:2px;"></div>
+    </div>
+    <div class="oe_span6">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr><th colspan="2" style="background:#1a1a2e;color:white;padding:10px 14px;text-align:left;border-radius:6px 6px 0 0;">Module Information</th></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;width:45%;">Module Name</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">stock_expiry_alert_manager</td></tr>
+        <tr style="background:#f8f9fa;"><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Version</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">19.0.1.0.0</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Compatibility</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">Odoo 19 Community Edition</td></tr>
+        <tr style="background:#f8f9fa;"><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">License</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">LGPL-3</td></tr>
+        <tr><td style="padding:9px 14px;color:#6c757d;">Depends On</td><td style="padding:9px 14px;font-weight:600;">base, stock, product_expiry, mail</td></tr>
+      </table>
+    </div>
+    <div class="oe_span6">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr><th colspan="2" style="background:#1a1a2e;color:white;padding:10px 14px;text-align:left;border-radius:6px 6px 0 0;">What's Included</th></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;width:45%;">New Models</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">4 (config, history, cost report, lot)</td></tr>
+        <tr style="background:#f8f9fa;"><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Scheduled Actions</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">3 auto crons (status, alerts, digest)</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Email Templates</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">7 QWeb (5 levels + manual + digest)</td></tr>
+        <tr style="background:#f8f9fa;"><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;color:#6c757d;">Views</td><td style="padding:9px 14px;border-bottom:1px solid #f0f0f0;font-weight:600;">15 (kanban, list, form, graph, pivot)</td></tr>
+        <tr><td style="padding:9px 14px;color:#6c757d;">Security</td><td style="padding:9px 14px;font-weight:600;">Manager + User groups + record rules</td></tr>
+      </table>
+    </div>
 
-    <div style="max-width:780px;margin:0 auto;">
-
-      <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #e74c3c;box-shadow:0 1px 6px rgba(0,0,0,0.05);">
-        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Does this work with Odoo Enterprise?</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Built for <strong>Odoo 19 Community Edition</strong>. Uses only CE-compatible models — no Enterprise-only dependencies.</p>
+    <div class="oe_span12" style="margin-top:20px;">
+      <div style="background:#f8f9fa;border-radius:10px;padding:20px 24px;">
+        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 14px;">Complete Feature Checklist</h4>
+        <div class="oe_span4" style="display:inline-block;vertical-align:top;width:30%;padding-right:10px;">
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Traffic-light Kanban Dashboard</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ 5-tier tiered email alerts</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Auto clearance transfers</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Weekly digest email</p>
+          <p style="font-size:12px;color:#495057;margin:0;">✅ FIFO sort on delivery orders</p>
+        </div>
+        <div style="display:inline-block;vertical-align:top;width:30%;padding-right:10px;">
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Expired lot validation block</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Bulk clearance wizard</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Cost at Risk report (3 views)</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ PDF + XLSX export</p>
+          <p style="font-size:12px;color:#495057;margin:0;">✅ Full alert audit trail</p>
+        </div>
+        <div style="display:inline-block;vertical-align:top;width:30%;">
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Alert snooze per lot</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Multi-company isolated config</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Category &amp; location filters</p>
+          <p style="font-size:12px;color:#495057;margin:0 0 6px;">✅ Manual alert wizard</p>
+          <p style="font-size:12px;color:#495057;margin:0;">✅ Role-based access control</p>
+        </div>
       </div>
-
-      <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #f39c12;box-shadow:0 1px 6px rgba(0,0,0,0.05);">
-        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">What if a product doesn't have lot tracking?</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">The module only monitors lots with an expiry date. Products without lot tracking or "Use Expiration Dates" disabled are safely ignored.</p>
-      </div>
-
-      <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #27ae60;box-shadow:0 1px 6px rgba(0,0,0,0.05);">
-        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Can I customise the alert thresholds?</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Yes. Go to <strong>Inventory → Expiry Alerts → Settings</strong> and set your own GREEN/YELLOW/RED thresholds and exact alert trigger days.</p>
-      </div>
-
-      <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #3498db;box-shadow:0 1px 6px rgba(0,0,0,0.05);">
-        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Do I need a separate email server?</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">No. The module uses Odoo's standard outgoing mail server. Configure SMTP under <strong>Settings → Technical → Outgoing Mail Servers</strong> once.</p>
-      </div>
-
-      <div style="background:white;border-radius:10px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #9b59b6;box-shadow:0 1px 6px rgba(0,0,0,0.05);">
-        <h4 style="font-size:14px;font-weight:700;color:#1a1a2e;margin:0 0 8px;">Can I stop alerts for a lot I'm already handling?</h4>
-        <p style="font-size:13px;color:#6c757d;margin:0;line-height:1.6;">Yes. Open the lot → Expiry Alerts tab → set <strong>"Snooze Alerts Until"</strong> to a future date. That lot is skipped by all crons until the date passes.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     DEVELOPER INFO
-═══════════════════════════════════════════════════ -->
+<!-- ═══ FAQ ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <div style="text-align:center;max-width:640px;margin:0 auto;background:#fef9f9;border:1px solid #fad7d7;border-radius:16px;padding:40px 32px;">
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;font-size:28px;font-weight:800;">❓ Frequently Asked Questions</h2>
+      <div style="width:56px;height:4px;background:#e74c3c;margin:0 auto 28px;border-radius:2px;"></div>
+    </div>
+    <div class="oe_span6">
+      <div style="background:white;border-radius:8px;padding:18px 20px;margin-bottom:12px;border-left:4px solid #e74c3c;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Does this work with Odoo Enterprise?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Built for <strong>Odoo 19 Community Edition</strong>. Uses only CE-compatible models — no Enterprise-only dependencies.</p>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px 20px;margin-bottom:12px;border-left:4px solid #f39c12;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Can I customise the alert thresholds?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Yes. Go to <strong>Inventory → Expiry Alerts → Settings</strong> and set your own GREEN/YELLOW/RED thresholds and alert trigger days.</p>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px 20px;border-left:4px solid #27ae60;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Do I need a separate email server?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">No. Uses Odoo's standard outgoing mail server. Configure SMTP under <strong>Settings → Technical → Outgoing Mail Servers</strong> once.</p>
+      </div>
+    </div>
+    <div class="oe_span6">
+      <div style="background:white;border-radius:8px;padding:18px 20px;margin-bottom:12px;border-left:4px solid #3498db;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">What if a product doesn't have lot tracking?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Only lots with an expiry date are monitored. Products without lot tracking or "Use Expiration Dates" are safely ignored.</p>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px 20px;margin-bottom:12px;border-left:4px solid #9b59b6;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Can I stop alerts for a lot I'm handling?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">Yes. Open the lot → Expiry Alerts tab → set <strong>"Snooze Alerts Until"</strong> — that lot is skipped by all crons until the date passes.</p>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px 20px;border-left:4px solid #e74c3c;border:1px solid #e9ecef;border-left-width:4px;">
+        <h4 style="font-size:13px;font-weight:700;color:#1a1a2e;margin:0 0 6px;">Does it block expired lots on internal transfers?</h4>
+        <p style="font-size:12px;color:#6c757d;margin:0;line-height:1.6;">No — only <strong>outgoing (customer) deliveries</strong> are blocked. Internal clearance transfers for expired stock are explicitly allowed.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Avatar -->
-      <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;font-size:28px;font-weight:900;line-height:72px;margin:0 auto 16px;text-align:center;box-shadow:0 4px 16px rgba(231,76,60,0.35);">P</div>
-
-      <!-- Name -->
-      <h3 style="font-size:24px;font-weight:800;color:#1a1a2e;margin:0 0 6px;">Prudhvi Inumarthi</h3>
-
-      <!-- Role -->
-      <p style="font-size:12px;color:#e74c3c;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 16px;">Module Developer &middot; Odoo 19 Specialist</p>
-
-      <!-- Bio -->
-      <p style="font-size:14px;color:#6c757d;line-height:1.8;max-width:460px;margin:0 auto 24px;">
-        Passionate about building enterprise-quality inventory tools for the Odoo Community ecosystem.
-        Every feature in this module is battle-tested against real warehouse workflows — built to save
-        time, prevent loss, and make stock management effortless.
-      </p>
-
-      <!-- Support box -->
-      <div style="background:white;border:1px dashed #e74c3c;border-radius:10px;padding:16px 24px;display:inline-block;text-align:center;">
-        <p style="margin:0 0 6px;font-size:14px;color:#1a1a2e;font-weight:700;">
-          ✉️ &nbsp;Support &amp; Inquiries
+<!-- ═══ DEVELOPER ═══ -->
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12" style="text-align:center;">
+      <div style="max-width:580px;margin:0 auto;background:white;border:1px solid #fad7d7;border-radius:14px;padding:36px 28px;">
+        <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#e74c3c,#c0392b);color:white;font-size:26px;font-weight:900;line-height:68px;margin:0 auto 14px;text-align:center;box-shadow:0 4px 14px rgba(231,76,60,0.3);">P</div>
+        <h3 style="font-size:22px;font-weight:800;color:#1a1a2e;margin:0 0 5px;">Prudhvi Inumarthi</h3>
+        <p style="font-size:11px;color:#e74c3c;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 14px;">Module Developer &middot; Odoo 19 Specialist</p>
+        <p style="font-size:13px;color:#6c757d;line-height:1.75;max-width:420px;margin:0 auto 20px;">
+          Passionate about building enterprise-quality inventory tools for the Odoo Community ecosystem.
+          Every feature is battle-tested against real warehouse workflows.
         </p>
-        <a href="mailto:prudhvi.inumarthi99@gmail.com" style="color:#e74c3c;font-weight:600;font-size:14px;text-decoration:none;">
-          prudhvi.inumarthi99@gmail.com
-        </a>
+        <div style="background:#fef9f9;border:1px dashed #e74c3c;border-radius:8px;padding:14px 20px;display:inline-block;">
+          <p style="margin:0 0 5px;font-size:13px;color:#1a1a2e;font-weight:700;">✉️ &nbsp;Support &amp; Inquiries</p>
+          <a href="mailto:prudhvi.inumarthi99@gmail.com" style="color:#e74c3c;font-weight:600;font-size:13px;text-decoration:none;">prudhvi.inumarthi99@gmail.com</a>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     CTA FOOTER
-═══════════════════════════════════════════════════ -->
+<!-- ═══ CTA ═══ -->
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <div style="background:linear-gradient(135deg,#1a1a2e,#c0392b);border-radius:16px;padding:56px 40px;text-align:center;color:white;margin-bottom:20px;">
-      <h2 style="font-size:34px;font-weight:900;margin:0 0 14px;">Stop Losing Money on Expired Stock</h2>
-      <p style="font-size:16px;color:rgba(255,255,255,0.8);margin:0 0 32px;line-height:1.6;">Install once. Configure in 10 minutes. Save every single month.<br/>Join warehouses already running Product Expiry Alert Manager.</p>
-      <div style="margin-bottom:28px;">
-        <span style="display:inline-block;background:white;color:#e74c3c;padding:14px 40px;border-radius:30px;font-weight:800;font-size:16px;margin:4px;">📦 Install Now</span>
+    <div class="oe_span12">
+      <div style="background:linear-gradient(135deg,#1a1a2e,#c0392b);border-radius:14px;padding:52px 32px;text-align:center;color:white;margin-bottom:16px;">
+        <h2 style="font-size:30px;font-weight:900;margin:0 0 12px;color:white;">Stop Losing Money on Expired Stock</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.8);margin:0 0 28px;line-height:1.65;">Install once. Configure in 10 minutes. Save every single month.</p>
+        <span style="display:inline-block;background:white;color:#e74c3c;padding:13px 36px;border-radius:28px;font-weight:800;font-size:15px;">📦 Install Now</span>
+        <p style="color:rgba(255,255,255,0.4);font-size:11px;margin:20px 0 0;">Odoo 19 Community Edition &nbsp;·&nbsp; LGPL-3 &nbsp;·&nbsp; prudhvi.inumarthi99@gmail.com</p>
       </div>
-      <p style="color:rgba(255,255,255,0.45);font-size:12px;margin:0;">
-        Odoo 19 Community Edition &nbsp;·&nbsp; LGPL-3 License &nbsp;·&nbsp; Support: prudhvi.inumarthi99@gmail.com
-      </p>
     </div>
   </div>
 </section>
